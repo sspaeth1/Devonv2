@@ -29,50 +29,54 @@
             </script>
 
 <script>
+    let pageId = parseInt(localStorage.getItem("pageId"));
+
 
     function loadPortfolioItem(pageId){
+        console.log(pageId);
                var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        let portfolioData = JSON.parse(this.responseText);
-        localStorage.setItem('pageId', pageId);
-        localStorage.setItem('portfolioData', portfolioData);
-        //  pageId =  localStorage.setItem("pageID", pageId);
-        $(".pinkBar").append( "<h1> <span class='font-weight-bold'> Portfolio: </span> " + portfolioData[pageId-1].title + "</h1>");
-        $(".project_details").append("<li> <span class='font-weight-bold'> Description: <span>" + portfolioData[pageId-1].description + "</li>");
-        $(".project_details").append("<li> <span class='font-weight-bold'> Type: </span> " + portfolioData[pageId-1].type + "</li>");
+        if (this.readyState == 4 && this.status == 200) {
+            let portfolioData = JSON.parse(this.responseText);
+            localStorage.setItem('portfolioData', portfolioData);
+            $(".project_details").append( "<h1 class='pinkHeader'>" + portfolioData[pageId-1].title + "</h1>");
+            $(".project_details").append("<li> <span class='font-weight-bold'> Description: <span>" + portfolioData[pageId-1].description + "</li>");
+            $(".project_details").append("<li> <span class='font-weight-bold'> Type: </span> " + portfolioData[pageId-1].type + "</li>");
+            
+            if(portfolioData[pageId-1].videoThumb != ""){
+                 $(".media").append(
+                "<video class='videoItem' controls poster=''> <source src='" +  portfolioData[pageId-1].videoUrl  +  "'</video>"
+                )
+            }
+            $(portfolioData[pageId-1].url).each(element => {
+                $(".media").append("<li> <img  src='" +  portfolioData[pageId-1].url[element] + "' alt=' " + portfolioData[pageId-1].description + " '></li>");
+            });
         
-        if( portfolioData[pageId-1].video){
-            $(".media").append(
-            "<video controls=''> <source src='" +  portfolioData[pageId-1].url  +  "'</video>"
-            )
         }
-        $(portfolioData[pageId-1].url).each(element => {
-            $(".media").append("<li> <img  src='" +  portfolioData[pageId-1].url[element] + "' alt=' " + portfolioData[pageId-1].description + " '></li>");
-        });
-      
-    }
-    };
-    xmlhttp.open("GET", "js/porfolioData.json", true);
+        };
+    xmlhttp.open("GET", "js/portfolioData.json", true);
     xmlhttp.send(); 
     }
-    $(document).ready(loadPortfolioItem(1))
+    $(document).ready(loadPortfolioItem(pageId))
 
     function prev(em){
-        if( em = 0){
-            em = portfolioData.length - 1;
+        if( em <= 0){
+            em = localStorage.portfolioData.length - 1;
         }
-        $(".pinkBar").children().remove();
+        localStorage.pageId = em;
+        $(".media").children().remove();
         $(".project_details").children().remove();
         loadPortfolioItem(em);
         console.log(em);
     }
 
     function next(em){
-        if( em = localStorage.getItem(portfolioData).length - 1){
-            em = 0;
+        if( em >= localStorage.portfolioData.length - 1){
+            localStorage.pageId = 1;
+            em = 1;
         }
-        $(".pinkBar").children().remove();
+        localStorage.pageId = em;
+        $(".media").children().remove();
         $(".project_details").children().remove();
         loadPortfolioItem(em);
         console.log(em);
@@ -88,38 +92,39 @@
     <div class="pinkBar">
         <div class="path_line"><a href="index.html">Home</a> / <a href="portfolio_filter.html">Portfolio</a> / post</div>
     </div>
-
-            <div class="site_content">
+    <div class="gray">
+                    <div class="site_content">
                 <div class="container">
-
-         <div class="row">
-         <div class="span7">
-            <div class="span5">
-                <ul class="project_details">
-                </ul>
-            </div>
-              <div class="project_img">
-                            <div id="main_video">
-                                <video  controls>
-                                <source src="videos/Item_b001.mp4"/>
-                               
-                                </video>
-                                </div>
-                                <div class="project_info">
-                                    <ul class="project_pag">
-                                        <li><a href="#" onclick="prev( $('section#page')[0].dataset.pageid-1)" >Prev</a></li>
-                                        <li><a href="#" onclick="next( $('section#page')[0].dataset.pageid+1)">Next</a></li>        
+                    <div class="project_info">
+                        <ul class="project_pag">
+                            <li><a href="#" onclick="prev(parseInt(localStorage.pageId)-1)">Prev</a></li>
+                            <li><a href="#" onclick="next(parseInt(localStorage.pageId)+1)">Next</a></li>        
+                         </ul>
+                    </div>
+            <div class="row porfolioCard">
+                <div class="span7">
+                    <div class="span5">
+                        <ul class="project_details">
+                        </ul>
+                    </div>
+                    <div class="project_img">
+                                    <ul class="media">
+                                    
                                      </ul>
-                                    <h3></h3>
-                                    <p></p>
-                                </div>
-                                
-                              </div>
-                            </div>
-                        
-                        </div>
-                  </div>
-              </div>
+                                   
+                </div>
+                            
+            </div>
+        </div>   
+          <div class="project_info">
+            <ul class="project_pag">
+                <li><a href="#" onclick="prev(parseInt(localStorage.pageId)-1)">Prev</a></li>
+                <li><a href="#" onclick="next(parseInt(localStorage.pageId)+1)">Next</a></li>        
+             </ul>
+         </div>
+        </div>
+    </div>
+
 
 
                         </div>

@@ -1,0 +1,86 @@
+[
+   {
+    "title": "ANIMATION DEMO",
+    "description":
+      "3D and 2D animations inform and amaze your audience so your message is clear and memorable",
+    "client": "", 
+    "type": "Pharmaceutical, Animation",
+    "videoThumb": "images/videos/Item_b001.jpg",
+    "videoUrl": "videos/Item_b001.mp4",
+    "url":""
+  },
+  {
+    "title": "ANATOMY OF THE EAR",
+    "description":
+      "Oral and Maxillofacial Surgery, St. Louis, MO: Saunders, an imprint of Elsevier, Inc.® <br/> These illustrations appeared in an early chapter of the atlas as a detailed reference for the antomy of the ear and temporal region. ",
+    "client": "", 
+    "type": "Anatomical illustration ",
+    "videoThumb": "",
+    "videoUrl": "",
+    "url": [
+        "images/portfolio/single_img_002a.png",
+        "images/portfolio/single_img_002b.png",
+        "images/portfolio/single_img_002c.png"
+    ]
+  },
+  {
+    "title": "Novel views of the sinuses and salivary glands",
+    "description": "Oral and Maxillofacial Surgery, St. Louis, MO: Saunders, an imprint of Elsevier, Inc.® <br />This atlas gave me the opportunity to invent new ways to depict relationships between the cranial sinuses, salivary glands and the skull infrastructure.",
+    "client": "", 
+    "type": "Anatomical illustration ",
+    "videoThumb": "",
+    "videoUrl": "",
+    "url": [
+        "images/portfolio/single_img_003a.png",
+        "images/portfolio/single_img_003b.png",
+        "images/portfolio/single_img_003c.png",
+        "images/portfolio/single_img_003d.png"
+    ]
+  },
+
+
+  {
+    "title": "MAXILLOFACIAL SURGERY",
+    "description": "Oral and Maxillofacial Surgery, St. Louis, MO: Saunders, an imprint of Elsevier, Inc.®",
+    "client": "", 
+    "type": "Surgical illustration",
+    "videoThumb": "",
+    "videoUrl": "",
+    "url": [
+        "images/portfolio/single_img_005a.png",
+        "images/portfolio/single_img_005b.png",
+        "images/portfolio/single_img_005c.png",
+        "images/portfolio/single_img_005d.png",
+        "images/portfolio/single_img_005e.png"
+    ]
+  },
+  {
+    "title": "ORAL SURGERY",
+    "description": "Oral and Maxillofacial Surgery, St. Louis, MO: Saunders, an imprint of Elsevier, Inc.®",
+    "client": "", 
+    "type": "Surgical illustration",
+    "videoThumb": "",
+    "videoUrl": "",
+    "url": [
+        "images/portfolio/single_img_004a.png",   
+        "images/portfolio/single_img_004b.png",
+        "images/portfolio/single_img_004c.png",   
+        "images/portfolio/single_img_004d.png",   
+        "images/portfolio/single_img_004e.png",
+        "images/portfolio/single_img_004g.png",
+        "images/portfolio/single_img_004j.png",  
+        "images/portfolio/single_img_004i.png"
+    ]
+  },
+  {
+    "title": "BIOMASK WOUND HEALING DEVICE",
+    "description": "These 3D models and animation clips demonstrate the components of a novel wound healing system. Eileen Moss of UT Arlington is developing the Biomask to better treat facial burns in wounded veterans. This advanced system will provide precisely localized monitoring and activation of treatment. ©2011 Devon Stuart",
+    "client": "U. of Texas at Arlington", 
+    "type": "Surgical illustration",
+    "videoThumb": "images/portfolio/single_img_01.png",
+    "videoUrl": ["videos/Item_b01a.mp4"],
+    "url": [
+        "images/portfolio/single_img_01.png"
+    ]
+  }
+]

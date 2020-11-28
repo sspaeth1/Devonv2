@@ -97,6 +97,10 @@ img {
 .widget {
     margin-bottom: 30px;
 }
+
+.gray{
+    background-color: rgb(240, 240, 240);
+}
 /* Clearing floats */
 .clear:after,
 .wrapper:after,
@@ -137,8 +141,14 @@ embed,
 iframe,
 object,
 video {
-    max-width: 100%;
+    max-width: 87%;
 }
+
+.videoItem{
+    border: 1px solid #b3b3b3;
+    margin-bottom: 5%;
+}
+
 .entry-content .twitter-tweet-rendered {
     max-width: 100% !important; /* Override the Twitter embed fixed width */
 }
@@ -731,10 +741,10 @@ SITE CSS
 .service .service_activ,
 .fc-calendar .fc-row > div,
 a {
-    -webkit-transition: ease-in-out 0.2s;
-    -moz-transition: ease-in-out 0.2s;
-    -o-transition: ease-in-out 0.2s;
-    transition: ease-in-out 0.2s;
+    -webkit-transition: ease-in-out 1s;
+    -moz-transition: ease-in-out 1s;
+    -o-transition: ease-in-out 1s;
+    transition: ease-in-out 1s;
 }
 /* ----- SLOW ----- */
 h1, h2, h3, h4, h5, h6 {
@@ -745,7 +755,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0px 0px 15px 0px;
 }
 h1 {
-    font-size: 59px;
+    font-size: 2.5rem;
 }
 h2 {
     font-size: 40px;
@@ -951,9 +961,12 @@ h4 {
 .recent_works .portfolio {
     margin-bottom: 20px;
 }
+
+.portfolio .row .span3 {
+    width: 25%;
+}
 .recent_works .button_white {
     display: block;
-    width: 120px;
     margin: 0px auto;
 }
 .recent_works h3 {
@@ -991,7 +1004,7 @@ h4 {
     text-transform: uppercase;
 }
 .site_content {
-    padding: 40px 0px 60px;
+    padding: 0 0px 60px;
 }
 .header {
 	background-repeat: repeat-x;
@@ -1066,6 +1079,13 @@ h4 {
 
 
 /* ======================== MENU ======================== */
+nav.navbar.navbar-expand-lg.navbar-light.bg-light{
+    padding: 0 1rem;
+}
+.bg-light{
+    background: #fff !important;
+}
+
 .header .menu ul {
     float: right;
 }
@@ -1087,8 +1107,13 @@ h4 {
 .header .menu ul li:hover a,
 .nav-item a:active{
 	color: rgba(239,55,52,1.00);
-    border-bottom: 5px solid #22948f;
+    /* border-bottom: 5px solid #22948f; */
 }
+li.nav-item:hover {
+    background: #ef3734;
+    color: #fff;
+}
+
 .header .menu ul li .children,
 .header .menu ul li .children li .children {
     display: none;
@@ -1186,6 +1211,13 @@ h4 {
     top: -8px;
 }
 
+@media screen and (max-width:990px){
+    .siteLogo{
+        position: relative;
+        padding: 10px;
+    }
+}
+
 .cmiLogo{
     max-height: 100px;
     display: flex;
@@ -1194,6 +1226,7 @@ h4 {
     padding: 10px;
     border-radius: 50%;
     border: 1px #22948f dashed;
+    margin: .5rem;
 }
 .cmiLogoCenter{
     visibility: collapse;
@@ -1236,15 +1269,17 @@ h4 {
     color: #000;
     font-weight: 700;
 }
-.project_info {
-    margin-bottom: 30px;
-}
 .project_info .project_pag {
-    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2% 0;
 }
 .project_info .project_pag li {
-    margin: 0px 0px 0px 15px;
+    margin: 0px;
     display: inline-block;
+    width: 49%;
+    text-align: center;
     *zoom: 1;
     *display: inline;
 }
@@ -1272,6 +1307,12 @@ h4 {
     margin-bottom: 30px;
 }
 /* ======================== SINGLE PORTFOLIO ======================== */
+
+.row.porfolioCard{
+    background: #fff;
+    border: 1px solid #d3d3d3;
+    box-shadow: 2px 2px 20px #b9b9b9;
+    }
 
 
 /* ======================== Google search bar ======================== */
@@ -1348,6 +1389,7 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
     border-bottom: 2px solid #d0d0d0;
     position: relative;
     overflow: hidden;
+    margin: 5%;
 }
 .portfolio .portfolio_item .item_image {
     max-width: 100%;
@@ -1499,6 +1541,9 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
     color: #303030;
     font-size: 14px;
     line-height: 1.5em;
+    border: solid 2px #f3f3f3;
+    border-top: none;
+    max-width: 350px;
 }
 .tabs .tab-content .tab_title {
     text-transform: uppercase;
@@ -1871,6 +1916,8 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 /* ========================= ACCORDION ========================= */
 .accordion_v2 {
     margin-bottom: 30px;
+    max-width: 310px;
+    padding: 0px 20px 0px 0px;
 }
 .accordion_v2 .accordion-heading {
     border-bottom: 0px solid #fff;
@@ -1890,20 +1937,60 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 }
 /* ========================= ACCORDION ========================= */
 
+
+.chooseUs{
+    background: #feecda;
+    padding: 5%;
+    margin: 2%;
+}
+.tabs{
+    border: 2px solid #feecda;
+    padding: 5%;
+    margin: 2%; 
+}
+
 .pinkBar{
     background-color: rgb(254 236 218);
-    width:150%;
+    width:100%;
     left:0%;
     padding: 20px;
     position: relative;
     border-top: 2px #22948f solid;
     font-size: 3em;
- 
+    color: #ef3734;
+    line-height: 2.75rem;
 }
+
+.pinkHeader{
+    background-color: rgb(254 236 218);
+    width:100%;
+    left:0%;
+    padding: 20px;
+    position: relative;
+    border-bottom: 1px #22948f solid;
+    font-size: 3em;
+    color: #ef3734;
+    line-height: 2.75rem;
+}
+
 
  .pinkBar > h1{
     color:#cc3a3a;
  }
+
+ .pinkBar .path_line {
+    font-size: 1.5rem;
+}
+
+.pinkBar .path_line a {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    color:#cc3a3a;
+}
+
+.pinkBar .path_line a:hover {
+    text-decoration: none;
+}
 
  @media screen and (max-width: 767px){
     .pinkBar > h1 {
@@ -1911,6 +1998,12 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
     }  
  }
  
+ /*======================== VIDEO =========================*/
+
+video{
+    width:100vw;
+    margin:auto;
+}
 
 /* ========================= SKILLS ========================= */
 .skills {
@@ -1933,17 +2026,14 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
     margin: 0px 10px;
 }
 .skills .skill_cover .skill {
-    border: 3px solid #fff;
     background: #22948f;
     color: #fff;
     font-weight: 700;
     text-align: center;
     width: 75px;
     border-radius: 100px;
-    height: 45px;
-    padding-top: 30px;
-    line-height: 1em;
 }
+
 .skills .skill_cover span {
     color: #303030;
     font-size: 19px;
@@ -2766,16 +2856,22 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 .testimonials {
     min-height: 90px;
     display: flex;
+    flex-direction: column;
     align-content: center;
     justify-content: center; 
 }
 
 .testimonial-item{
     padding: 20px;
-    margin: 30px;
+    margin: auto;
+    margin-bottom: 50px;
     max-width: 75%;
     background: #22948f; 
     border-radius: 20px;
+}
+
+.testimonial-item:first-of-type{
+    margin-top:5%;
 }
 
 .quote::before{
@@ -2790,7 +2886,11 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
     min-height:50px;      
     }
 
-.quote::after{
+    .bottom-right{
+        position: relative;
+    }
+
+.quote.bottom-right::after{
     border-radius: 100% 0 0 0;
 
     content: url(../images/elements/quoteClose.svg);
@@ -2829,7 +2929,7 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 }
 .testimonials .testimonial_info {
     display: block;
-    color: #111;
+    color: #064542;
     font-weight: 600;
     font-style: italic;
     margin-top: 15px;
@@ -3018,7 +3118,7 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 .container{
     margin-right: auto;
     margin-left: auto;
-    width: 950px;
+    /* width: 950px; */
 }
 
 .clients {
@@ -3354,22 +3454,25 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
     background: #fff;
     margin: 10%;
     padding: 15px 0px 25px;
-    position: relative;
+    display: flex;
     border: 1px solid #22948f;
     border-radius: 20px;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
 }
+
 .service:hover .service_activ {
     background: #000;
 }
 .service .service_activ {
-    display: block;
-    position: absolute;
     width: 30px;
     right: 0;
     margin: -15px 0px 0px 0px;
     padding: 0px;
     height: 22px;
     background: #22948f;
+
 }
 .service .service_icon {
     text-align: center;
@@ -3388,7 +3491,10 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
     display: block;
     border-bottom: 1px solid #e0e0e0;
     background: #22948f;
+    width:40%;
+    border-radius: 5px;
 }
+
 .service span a{
  color: #fff;
 }
@@ -3930,16 +4036,14 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 
 .arrows_wrapper{
     position: absolute;
-    right: 0;
 }
 
 .r_p_a{
     position: relative;
     z-index: 2;
 }
-/* .testimonials{
-    position: relative;
-} */
+
+
 .testimonials .testimonial-item{
     position: absolute;
     top: 0;
@@ -3957,7 +4061,7 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 
 .testimonials .testimonial-item.active{
     position: relative;
-    opacity: 1;
+    opacity: 0;
     z-index: 1;
     visibility: visible;
     height: auto;
@@ -4265,6 +4369,13 @@ body.animated_change *{
     z-index: 1;
 }
 
+
+ul.project_details li {
+    font-size: 1rem;
+    margin: 2%;
+    color: #013547;
+}
+
 /* portfolio hover */
 .portfolio .portfolio_item .item_hover{
     padding-top: 0;
@@ -4279,6 +4390,41 @@ body.animated_change *{
 .portfolio .portfolio_item .item_hover.item_hover_full{
     height: 100%;
 }
+
+
+ul.media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+ul.media li {
+    margin: 2%;
+}
+
+ul.media li img{
+    max-width: 100%
+}
+
+ul.project_details {
+    margin: 6%;
+}
+
+
+.item_hover{
+top: 10px;
+position: relative;
+background: #ef3734;
+max-height: 51px;
+box-shadow: 2px 2px #451c0a;
+}
+
+
+.item_hover:hover {
+    transform: translate(0px, -10px);
+}
+
 .portfolio .portfolio_item .item_hover .item_hover_wrapper{
     position: absolute;
     top: 0;
@@ -4286,6 +4432,10 @@ body.animated_change *{
     left: 0;
     right: 0;
     margin: auto;
+    -webkit-transition: 2s ease-in-out;
+    -moz-transition: 2s ease-in-out;
+    -o-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
 }
 
 

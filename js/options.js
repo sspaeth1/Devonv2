@@ -170,7 +170,7 @@ $(document).ready(function () {
         scrollTop: 0,
       },
       1200,
-      "swing"
+      "linear"
     );
     return false;
   });
@@ -289,7 +289,7 @@ jQuery(document).ready(function ($) {
   load_changer();
   load_blog_masonry();
   load_portfolio_filters();
-  load_portfolio_titles();
+  // load_portfolio_titles();
   load_team();
 });
 
@@ -505,7 +505,7 @@ var load_carousel = function () {
                   {
                     queue: false,
                     duration: t_time,
-                    easing: "swing",
+                    easing: "linear",
                   }
                 );
                 var t_index_opposite = t_index + t_visible;
@@ -520,7 +520,7 @@ var load_carousel = function () {
                   {
                     queue: false,
                     duration: t_time,
-                    easing: "swing",
+                    easing: "linear",
                   }
                 );
               }
@@ -539,7 +539,7 @@ var load_carousel = function () {
                   {
                     queue: false,
                     duration: t_time,
-                    easing: "swing",
+                    easing: "linear",
                   }
                 );
                 var t_items_current = t_items.filter(":eq(" + t_index + ")");
@@ -553,7 +553,7 @@ var load_carousel = function () {
                   {
                     queue: false,
                     duration: t_time,
-                    easing: "swing",
+                    easing: "linear",
                   }
                 );
                 t_index++;
@@ -723,14 +723,14 @@ var load_main_slider = function () {
         .removeClass(t_items_active_class)
         .children(".rs_mainslider_items_image")
         .stop(true)
-        .animate({ opacity: 0 }, { queue: false, duration: t_time, easing: "swing" });
+        .animate({ opacity: 0 }, { queue: false, duration: t_time, easing: "linear" });
       t_dots.filter(t_dots_active_selector).removeClass(t_dots_active_class);
       t_items
         .filter(":eq(" + t_index + ")")
         .addClass(t_items_active_class)
         .children(".rs_mainslider_items_image")
         .stop(true)
-        .animate({ opacity: 1 }, { queue: false, duration: t_time, easing: "swing" });
+        .animate({ opacity: 1 }, { queue: false, duration: t_time, easing: "linear" });
       t_dots.filter(":eq(" + t_index + ")").addClass(t_dots_active_class);
       t_items_container.css({ height: "auto" });
     };
@@ -760,7 +760,7 @@ var load_main_slider = function () {
               .addClass(t_items_active_class)
               .children(".rs_mainslider_items_image")
               .stop(true)
-              .animate({ opacity: 1 }, { queue: false, duration: t_time, easing: "swing" });
+              .animate({ opacity: 1 }, { queue: false, duration: t_time, easing: "linear" });
             t_dots.filter(":eq(" + t_index + ")").addClass(t_dots_active_class);
             t_prev.click(function () {
               var t_text_old = t_text.filter(":eq(" + t_index + ")");
@@ -791,14 +791,14 @@ var load_main_slider = function () {
                 .removeClass(t_items_active_class)
                 .children(".rs_mainslider_items_image")
                 .stop(true)
-                .animate({ opacity: 0 }, { queue: false, duration: t_time, easing: "swing" });
+                .animate({ opacity: 0 }, { queue: false, duration: t_time, easing: "linear" });
               t_dots.filter(t_dots_active_selector).removeClass(t_dots_active_class);
               t_items
                 .filter(":eq(" + t_index + ")")
                 .addClass(t_items_active_class)
                 .children(".rs_mainslider_items_image")
                 .stop(true)
-                .animate({ opacity: 1 }, { queue: false, duration: t_time, easing: "swing" });
+                .animate({ opacity: 1 }, { queue: false, duration: t_time, easing: "linear" });
               t_dots.filter(":eq(" + t_index + ")").addClass(t_dots_active_class);
               t_items_container.css({ height: "auto" });
               t_autoplay_stop();
@@ -837,14 +837,14 @@ var load_main_slider = function () {
                   .removeClass(t_items_active_class)
                   .children(".rs_mainslider_items_image")
                   .stop(true)
-                  .animate({ opacity: 0 }, { queue: false, duration: t_time, easing: "swing" });
+                  .animate({ opacity: 0 }, { queue: false, duration: t_time, easing: "linear" });
                 t_dots_current.filter(t_dots_active_selector).removeClass(t_dots_active_class);
                 t_items
                   .filter(":eq(" + t_index + ")")
                   .addClass(t_items_active_class)
                   .children(".rs_mainslider_items_image")
                   .stop(true)
-                  .animate({ opacity: 1 }, { queue: false, duration: t_time, easing: "swing" });
+                  .animate({ opacity: 1 }, { queue: false, duration: t_time, easing: "linear" });
                 t_dots.filter(":eq(" + t_index + ")").addClass(t_dots_active_class);
                 t_items_container.css({ height: "auto" });
               }
@@ -1048,24 +1048,24 @@ var load_portfolio_filters = function () {
   });
 };
 
-var load_portfolio_titles = function () {
-  $(".portfolio_item>.item_hover").each(function () {
-    var t = $(this);
-    t.append(
-      $("<div/>")
-        .addClass("item_hover_wrapper")
-        .css({
-          top: "10px",
-          position: "relative",
-          background: "#ef3734",
-          maxHeight: "51px",
-          boxShadow: "2px 2px #451c0a",
-        })
-        .height(t.height())
-        .append(t.children().remove())
-    ).addClass("item_hover_full");
-  });
-};
+// var load_portfolio_titles = function () {
+//   $(".portfolio_item>.item_hover").each(function () {
+//     var t = $(this);
+//     t.append(
+//       $("<div/>")
+//         .addClass("item_hover_wrapper")
+//         .css({
+//           top: "10px",
+//           position: "relative",
+//           background: "#ef3734",
+//           maxHeight: "51px",
+//           boxShadow: "2px 2px #451c0a",
+//         })
+//         .height(t.height())
+//         .append(t.children().remove())
+//     ).addClass("item_hover_full");
+//   });
+// };
 
 var load_team = function () {
   if (!$(".our_team").length) return;
@@ -1163,25 +1163,6 @@ $Electra.form.subscribe = Object();
 $Electra.form.subscribe.id = "#newsletter";
 
 jQuery(document).ready(function ($) {
-  /* TESTIMONIALS */
-
-  $(".testimonials a.arrow").click(function (e) {
-    e.preventDefault();
-    var trigger = $(this).attr("data-trigger");
-    var list = $(this).closest("ul.testimonials");
-    var total_items = list.children().length - 1;
-    var index = list.find("li.testimonial-item.active").index() - 2;
-
-    var next;
-    if (trigger === "next") next = index + 1 >= total_items ? 0 : index + 1;
-    else if (trigger === "prev") next = index - 1 < 0 ? total_items - 1 : index - 1;
-
-    list.children("li.testimonial-item").eq(index).toggleClass("active");
-    list.children("li.testimonial-item").eq(next).toggleClass("active");
-
-    return false;
-  });
-
   /* COUNTDOWN */
   var cd_duedate = $("#electra_countdown").attr("data-duedate");
   var cd_start = new Date($("#electra_countdown").attr("data-startdate")).getTime();
