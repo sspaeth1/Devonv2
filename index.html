@@ -24,6 +24,7 @@
             $(function(){
             $("#header-template").parent().load("header.html");
             $("#header-template").remove();
+            $('#recentWork-template').load("recentWork.html")
             $("#footer-template").load("footer.html");
             });
             </script>
@@ -50,17 +51,7 @@
           </div>
 
 
-        <!-- ================================= START CLASS FOR BOXED/FLUID -->
-        <div class="boxed_fluid"> <!-- black_version = class -->
-            <!-- ================================= START CLASS HEADER -->
-          <div class="header">
 
-            <!-- ================================= END CLASS HEADER -->
-
-            <!-- ================================= START SITE CONTENT -->
-            <div class="site_content">
-
-                <!--  =====  START SLIDER  =====  -->
                 <div class="slider">
                     <div class="rs_mainslider">
                         <ul class="rs_mainslider_items">
@@ -112,96 +103,11 @@
                         </div>
                     </div>
                 </div>
-                <!--  =====  END SLIDER  =====  -->
+  
+
+                <div id="recentWork-template"></div>
 
 
-                <div class="container">
-       
-
-
-
-                </div>
-
-                <!-- START RECENT WQRKS -->
-              <div class="recent_works">
-                    <div class="container">
-
-                        <h3>/ Recent work /</h3>
-
-                        <div class="portfolio">
-                            <div class="row">
-
-                                <div class="span3">
-                                    <div class="portfolio_item">
-                                        <div class="item_hover">
-                                            <div class="item_title">Penis transplant</div>
-                                            <ul class="item_tags">
-                                                <li><a href="#">Surgical illustration and animation</a></li>
-                                            </ul>
-<a href="portfolio_d1.html" class="button_color">view</a>
-                                        </div>
-                                        <div class="item_image">
-                                            <img src="images/portfolio/item_d1.png" alt="portfolio 1" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="span3">
-                                    <div class="portfolio_item">
-                                        <div class="item_hover">
-                                            <div class="item_title">Immunotherapy</div>
-                                            <ul class="item_tags">
-                                                <li><a href="#">3D animation</a></li>
-                                            </ul>
-                                            <a href="portfolio_d2.html" class="button_color">view</a>
-                                        </div>
-                                        <div class="item_image">
-                                            <img src="images/portfolio/item_d2.png" alt="portfolio 1" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="span3">
-                                    <div class="portfolio_item">
-                                        <div class="item_hover">
-                                            <div class="item_title">Video Atlas of Neurosurgery</div>
-                                            <ul class="item_tags">
-                                                <li><a href="#">Sugical illustration</a></li>
-                                            </ul>
-                                            <a href="portfolio_d3.html" class="button_color">view</a>
-                                        </div>
-                                        <div class="item_image">
-                                            <img src="images/portfolio/item_d3.png" alt="portfolio 1" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="span3">
-                                    <div class="portfolio_item">
-                                        <div class="item_hover">
-                                            <div class="item_title">Transoral thyroidectomy</div>
-                                            <ul class="item_tags">
-                                                <li><a href="#">Surgical animation</a></li>
-                                            </ul>
-                                            <a href="portfolio_d4.html" class="button_color">view</a>
-                                        </div>
-                                        <div class="item_image">
-                                            <img src="images/portfolio/item_d4.png" alt="portfolio 1" />
-                                        </div>
-                                    </div>                             
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <a href="portfolio_filter.html" class="button_white">see all</a>
-                        <div class="clear"></div>
-                    </div>
-              </div>
-                <!-- END RECENT WQRKS -->
-
-
-            <!-- ================================= END SITE CONTENT -->
             <div id="footer-template"></div>
 
             <script src="js/modernizr.custom.63321.js"></script>
