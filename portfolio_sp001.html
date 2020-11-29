@@ -23,136 +23,173 @@
             $(function(){
             $("#header-template").parent().load("header.html");
             $("#header-template").remove();
-            $('#recentWork-template').load("recentWork.html")
             $("#footer-template").load("footer.html");
             });
             </script>
-
-<script>
-
-    function loadPortfolioItem(pageId){
-               var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        let portfolioData = JSON.parse(this.responseText);
-        localStorage.setItem('pageId', pageId);
-        localStorage.setItem('portfolioData', portfolioData);
-        //  pageId =  localStorage.setItem("pageID", pageId);
-        $(".pinkBar").append( "<h1> <span class='font-weight-bold'> Portfolio: </span> " + portfolioData[pageId-1].title + "</h1>");
-        $(".project_details").append("<li> <span class='font-weight-bold'> Description: <span>" + portfolioData[pageId-1].description + "</li>");
-        $(".project_details").append("<li> <span class='font-weight-bold'> Type: </span> " + portfolioData[pageId-1].type + "</li>");
-        
-        if( portfolioData[pageId-1].video){
-            $(".media").append(
-            "<video controls=''> <source src='" +  portfolioData[pageId-1].url  +  "'</video>"
-            )
-        }
-        $(portfolioData[pageId-1].url).each(element => {
-            $(".media").append("<li> <img  src='" +  portfolioData[pageId-1].url[element] + "' alt=' " + portfolioData[pageId-1].description + " '></li>");
-        });
-      
-    }
-    };
-    xmlhttp.open("GET", "js/porfolioData.json", true);
-    xmlhttp.send(); 
-    }
-    $(document).ready(loadPortfolioItem(1))
-
-    function prev(em){
-        if( em = 0){
-            em = portfolioData.length - 1;
-        }
-        $(".pinkBar").children().remove();
-        $(".project_details").children().remove();
-        loadPortfolioItem(em);
-        console.log(em);
-    }
-
-    function next(em){
-        if( em = localStorage.getItem(portfolioData).length - 1){
-            em = 0;
-        }
-        $(".pinkBar").children().remove();
-        $(".project_details").children().remove();
-        loadPortfolioItem(em);
-        console.log(em);
-    }
-
-</script>
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">   
          <div id="header-template"></div>
     
-    </nav>
-
+    </nav> 
     <div class="pinkBar">
-        <div class="path_line"><a href="index.html">Home</a> / <a href="portfolio_filter.html">Portfolio</a> / post</div>
+        <h1><span class="font-weight-bold">Portfolio: </span>Selected works </h1>
     </div>
-
-            <div class="site_content">
+    <div class="site_content">
+          
+    <div class="container">
+            <div class="path_line"><a href="index.html">Home</a> / <a href="portfolio_filter.html">Portfolio</a> / post</div>
+    </div>
                 <div class="container">
-
+                    <div class="single_portfolio">
+                        <div class="project_info">
+                            <ul class="project_pag">
+                                <li><a href="portfolio_sp17.html">Prev</a></li>
+                                <li><a href="portfolio_sp002.html">Next</a></li>
+                   
+             </ul>
+                            <h3></h3>
+                            <p></p>
+                        </div>
+    </div>
          <div class="row">
          <div class="span7">
-            <div class="span5">
-                <ul class="project_details">
-                </ul>
-            </div>
               <div class="project_img">
+         
+            
                             <div id="main_video">
-                                <video  controls>
+                                <video width="640" height="480" controls autoplay>
                                 <source src="videos/Item_b001.mp4"/>
                                
                                 </video>
                                 </div>
-                                <div class="project_info">
-                                    <ul class="project_pag">
-                                        <li><a href="#" onclick="prev( $('section#page')[0].dataset.pageid-1)" >Prev</a></li>
-                                        <li><a href="#" onclick="next( $('section#page')[0].dataset.pageid+1)">Next</a></li>        
-                                     </ul>
-                                    <h3></h3>
-                                    <p></p>
-                                </div>
+               
                                 
                               </div>
                             </div>
-                        
+                            <div class="span5">
+                                <h3>Animation demo</h3>
+                                <ul class="project_details">
+                                    <li><span> </span> Devon Medical Art, LLC</li>
+                                    <li><span></span> Pharmaceutical, Animation</li>
+                                </ul>
+                                <h3></h3>
+                                <p> 3D and 2D animations inform and amaze your audience so your message is clear and memorable  </p>
+                              
+
+
+                                <div class="hide">
+                                    <span>Share</span>
+                                    <div>
+                                        <ul class="socials_2">
+                                            <li><a href="#"><img src="images/socials/facebook.png" alt="facebook" /></a></li> 
+                                            <li><a href="#"><img src="images/socials/twitter.png" alt="twitter" /></a></li> 
+                                            <li><a href="#"><img src="images/socials/googleplus.png" alt="google" /></a></li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>                        
                         </div>
                   </div>
               </div>
 
+                   <!-- START RECENT WQRKS -->
+              <div class="recent_works">
+                    <div class="container">
 
+                        <h3>/ Recent work /</h3>
+
+                        <div class="portfolio">
+                            <div class="row">
+
+                                <div class="span3">
+                                    <div class="portfolio_item">
+                                        <div class="item_hover">
+                                            <div class="item_title">Penis transplant</div>
+                                            <ul class="item_tags">
+                                                <li><a href="#">Surgical illustration and animation</a></li>
+                                            </ul>
+<a href="portfolio_d1.html" class="button_color">view</a>
+                                        </div>
+                                        <div class="item_image">
+                                            <img src="images/portfolio/item_d1.png" alt="portfolio 1" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="span3">
+                                    <div class="portfolio_item">
+                                        <div class="item_hover">
+                                            <div class="item_title">Immunotherapy</div>
+                                            <ul class="item_tags">
+                                                <li><a href="#">3D animation</a></li>
+                                            </ul>
+                                            <a href="portfolio_d2.html" class="button_color">view</a>
+                                        </div>
+                                        <div class="item_image">
+                                            <img src="images/portfolio/item_d2.png" alt="portfolio 1" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="span3">
+                                    <div class="portfolio_item">
+                                        <div class="item_hover">
+                                            <div class="item_title">Video Atlas of Neurosurgery</div>
+                                            <ul class="item_tags">
+                                                <li><a href="#">Sugical illustration</a></li>
+                                            </ul>
+                                            <a href="portfolio_d3.html" class="button_color">view</a>
+                                        </div>
+                                        <div class="item_image">
+                                            <img src="images/portfolio/item_d3.png" alt="portfolio 1" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="span3">
+                                    <div class="portfolio_item">
+                                        <div class="item_hover">
+                                            <div class="item_title">Transoral thyroidectomy</div>
+                                            <ul class="item_tags">
+                                                <li><a href="#">Surgical animation</a></li>
+                                            </ul>
+                                            <a href="portfolio_d4.html" class="button_color">view</a>
+                                        </div>
+                                        <div class="item_image">
+                                            <img src="images/portfolio/item_d4.png" alt="portfolio 1" />
+                                        </div>
+                                    </div>                             
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <a href="portfolio_filter.html" class="button_white">see all</a>
+                        <div class="clear"></div>
+                    </div>
+              </div>
+                <!-- END RECENT WQRKS -->
                         </div>
                     </div>
                 </div>
           </div>
- 
-          <div id="recentWork-template"></div>
-          <div id="footer-template"></div>
-
-          <script src="js/modernizr.custom.63321.js"></script>
-          <script src="js/jquery-ui.min.js" type="text/javascript" ></script>
-          <script src="js/bootstrap.js" type="text/javascript"></script>
-          <script src="js/placeholder.js" type="text/javascript"></script>
-          <script src="js/imagesloaded.pkgd.min.js" type="text/javascript"></script>
-          <script src="js/masonry.pkgd.min.js" type="text/javascript"></script>
-          <script src="js/jquery.swipebox.min.js" type="text/javascript"></script>
-          <script src="js/countdown.js" type="text/javascript"></script>     
-          <script src="js/options.js" type="text/javascript"></script>
-          <script src="js/jquery.calendario.js"></script>
-          <script src="js/data.js" type="text/javascript"></script>
-              <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-          <script type="text/javascript">
-      
-              </script>
-      
-      <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'UA-177523319-1');
-        </script>
-          </body>
-      
-      </html>
+            <!-- ================================= END SITE CONTENT -->
+            <div id="recentWork-template"></div>
+            <div id="footer-template"></div>
+  
+            <script src="js/modernizr.custom.63321.js"></script>
+            <script src="js/jquery-ui.min.js" type="text/javascript" ></script>
+            <script src="js/placeholder.js" type="text/javascript"></script>
+            <script src="js/options.js" type="text/javascript"></script>
+                <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    </body>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177523319-1">
+  </script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-177523319-1');
+  </script>
+  </html>

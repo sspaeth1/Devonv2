@@ -1117,7 +1117,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light{
     /* border-bottom: 5px solid #22948f; */
 }
 li.nav-item:hover {
-    background: #ef3734;
+    background: #22948f;
     color: #fff;
 }
 
@@ -1310,7 +1310,7 @@ li.nav-item:hover {
     padding: 5px 14px;
 } 
 .project_info .project_pag li a:hover {
-    background: #000;
+    background: #22948f;
 }
 .single_portfolio .project_img img {
     border-bottom: 2px solid #d0d0d0;
@@ -1411,7 +1411,8 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 .portfolio .portfolio_item .item_image img {
     text-align: center;
     margin: 0px auto;
-    max-width: 100%;
+    width: 300px;
+    height: 275px;
 }
 .portfolio .portfolio_item .item_hover {
     position: absolute;
@@ -1431,7 +1432,6 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 .portfolio .portfolio_item .item_hover .item_title {
     text-align: center;
     padding-top: 5px;
-
     color: #fff;   
     text-transform: uppercase;
     font-weight: 700;
@@ -1606,7 +1606,8 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 .contact_form .contact_button:hover,
 .boxed_fluid.black_version .event .button_white:hover,
 .button_white:hover {
-    background: #000;
+    background: #22948f;
+    border: 3px solid rgb(35, 92, 92); 
     color: #fff;
 }
 .button_black {
@@ -3039,7 +3040,6 @@ video{
     background:#fff;
     margin-left:auto;
     margin-right:auto;
-    border-top: rgb(254 236 218) 2px solid;
     border-bottom: rgb(254 236 218) 2px  solid;
 
 }
@@ -3113,7 +3113,7 @@ video{
     min-width: 50%;
     text-align: center;
     font-size: 3vw;
-    font-weight: 700;
+    font-family: Aleo-Regular, 'Enriqueta', serif;
     line-height: 5vh;
     background-color: rgba( 256,256,256,.8);
     overflow: hidden;
@@ -3208,6 +3208,11 @@ video{
     .rs_mainslider ul.rs_mainslider_items li .rs_mainslider_items_text span {
     line-height: 43px;
 }
+}
+
+.slider img{
+    max-width: 100%;
+    height: auto;
 }
 /* ========================= SLIDER ========================= */
 

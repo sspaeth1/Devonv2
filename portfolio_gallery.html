@@ -31,7 +31,6 @@
          <div id="header-template"></div>
     
     </nav> 
-
     <script>
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function(){
@@ -39,41 +38,39 @@
                 let portfolioData = JSON.parse(this.responseText);
                 localStorage.setItem("portfolioData",  portfolioData );
 
-
-                mediaTypeCheck = () => {
-                   if(element.videoThumb === ""){
-                        element.url[0]}
-                    
+               getThumb = (el) =>{
+                   if( el.videoThumb !== ""){
+                    return el.videoThumb   
+                   } 
+                return el.url[0]; 
+            
                }
 
-               sample = () =>{
-                   console.log(this.response.element);
-               }
+               getPageId = (el) => el.index();
+            
 
-                portfolioData.forEach(element => {
+                portfolioData.forEach( (element, i) => {
                     $(".row").append(
                             `<div class='span4 design'>
                                 <div class='portfolio_item'>
                                     <div class='item_hover'>
                                         <div class='item_title'>${element.title}</div>
                                         <ul class='item_tags'>
+                                            <li> </li>
                                             <li><a href='#'>${element.type}</li>
-                                            <li><a href='#'>${element}</a></li>
+                                            <li><a href='#'>${element.client}</a></li>
                                         </ul>
                                     </div>
                                     <div class='item_image'>
                                        
-                                        <img src=" ${sample() }" onclick="location.href='portfolio_item.html'; localStorage.setItem('pageId', 1); window.location.hash = '1'; " alt="portfolio 1" />
-
+                                        <img src="${getThumb(element)}" onclick="location.href='portfolio_item.html'; localStorage.setItem('pageId', ${i+1}); window.location.hash = '1'; " alt="portfolio 1" />
                                    </div>
                                 </div>
                                     <a href="portfolio_sp001.html" class="button_color">view</a>
                                 
                           </div>`
                     )
-
                 });
-
 
             } 
  
@@ -81,68 +78,36 @@
             xmlhttp.open("GET", "js/portfolioData.json", true);
             xmlhttp.send();
     </script>
-
           <div class="pinkBar">
             <h1><span class="font-weight-bold">Portfolio: </span>Selected works </h1>
     </div>
-        <d
-        iv class="boxed_fluid">
-
+        <div class="boxed_fluid">
             <!-- ================================= START SITE CONTENT -->
             <div class="site_content">
                 <div class="content">
                     <div class="portfolio">
                         <div class="row">
-
-
-                            <div class="span4 design">
-                                <div class="portfolio_item">
-                                    <div class="item_hover">
-                                        <div class="item_title">Devon Medical Art Demo</div>
-                                        <ul class="item_tags">
-                                            <li><a href="#"></a>3D models</a></li>
-                                            <li><a href="#">Animation</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="item_image">
-                                        <img src="images/portfolio/item_b001.png" onclick="location.href='portfolio_item.html'; localStorage.setItem('pageId', 1); window.location.hash = '1'; " alt="portfolio 1" />
-                                    </div>
-                                </div>
-                                    <a href="portfolio_sp001.html" class="button_color">view</a>
-                                
-                          </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
             <!-- ================================= END SITE CONTENT -->
 
-
-        <div id="footer-template"></div>
-      
-      
-        </div>
-
-        <script src="js/modernizr.custom.63321.js"></script>
-        <script src="js/jquery-ui.min.js" type="text/javascript" ></script>
-        <script src="js/placeholder.js" type="text/javascript"></script>
-        <script src="js/imagesloaded.pkgd.min.js" type="text/javascript"></script>
-        <script src="js/options.js" type="text/javascript"></script>
-        <script src="js/jquery.calendario.js"></script>
-            <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-</body>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177523319-1">
-</script>
-
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-177523319-1');
-</script>
-</html>
+            <div id="footer-template"></div>
+  
+            <script src="js/modernizr.custom.63321.js"></script>
+            <script src="js/jquery-ui.min.js" type="text/javascript" ></script>
+            <script src="js/placeholder.js" type="text/javascript"></script>
+            <script src="js/options.js" type="text/javascript"></script>
+                <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    </body>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177523319-1">
+  </script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-177523319-1');
+  </script>
+  </html>
