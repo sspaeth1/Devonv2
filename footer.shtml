@@ -1,0 +1,46 @@
+
+          <!-- START CLIENTS -->
+                <div class="clients">
+                        <h3> Select clients</h3>
+                            <div>
+                                <ul class="selectClients" data-num-items="6">
+                                    <li class="span2"><a href="#"><img src="images/clients/clients_1.png" alt="clients" /></a></li> 
+                                    <li class="span2"><a href="#"><img src="images/clients/clients_2.png" alt="clients" /></a></li> 
+                                    <li class="span2"><a href="#"><img src="images/clients/clients_3.png" alt="clients" /></a></li> 
+                                    <li class="span2"><a href="#"><img src="images/clients/clients_4.png" alt="clients" /></a></li> 
+                                    <li class="span2"><a href="#"><img src="images/clients/clients_5.png" alt="clients" /></a></li> 
+                                    <li class="span2"><a href="#"><img src="images/clients/clients_6.png" alt="clients" /></a></li> 
+                                 </ul>
+                            </div>              
+              </div>
+                <!-- END CLIENTS -->
+                <section class="footer">
+
+                        <div class="row">
+                            <div class="span4">
+                                <div class="widget-title">contact info</div>
+                                <ul class="contact_widget">
+                                    <li class="phone">001 717 534 1781</li>
+                                  <li class="mail"><a href="mailto:devonmedicalart@gmail.com">devonmedicalart@gmail.com</a></li>
+                                  <li class="location">Hershey PA USA</li>
+                                </ul>
+                          </div>
+                </section>
+
+
+   
+
+        <!-- ===================================== START SCRIPTS -->
+        <script src="js/modernizr.custom.63321.js"></script>
+        <script src="js/jquery-1.10.0.min.js"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/placeholder.js" type="text/javascript"></script>
+        <script src="js/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+        <script src="js/masonry.pkgd.min.js" type="text/javascript"></script>
+        <script src="js/jquery.swipebox.min.js" type="text/javascript"></script>
+        <script src="js/countdown.js" type="text/javascript"></script>     
+        <script src="js/options.js" type="text/javascript"></script>
+        <script src="js/jquery.calendario.js"></script>
+        <script src="js/data.js" type="text/javascript"></script>
+        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

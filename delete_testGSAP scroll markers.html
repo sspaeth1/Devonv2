@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/devonmedicalart.com/js/gsap.min.js"> </script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .illustration{
+            position: relative;
+            top: 800px;
+        }
+        .med_il{
+        }
+        .med_il_instrument{
+            position: absolute;
+            top:0px;
+            left: 0px;
+        }
+
+        .box1{
+            background: salmon;
+            height: 100vh;
+        }
+        .box2{
+            background:sandybrown;
+            height: 100vh;
+        }
+
+    </style>
+    
+
+
+<div class="box1">
+        <div class="illustration">
+            <img class="med_il" src="images/elements/med_il.jpg" alt="">
+            <img  class="med_il_instrument" src="images/elements/med_il_instrument.png" alt="">
+    </div>
+</div>
+<div class="box2">
+
+</div>
+
+
+    <script>
+    const updateScrollPercentage = function() { 
+			const heightOfWindow = window.innerHeight,
+				contentScrolled = window.pageYOffset,
+				bodyHeight = document.body.offsetHeight;
+
+
+				let  total = bodyHeight - heightOfWindow,
+					got = contentScrolled,
+                    percent = parseInt((got/total) * 100),
+                    lastScrollTop = 0;
+
+
+                    var st = window.pageYOffset || document.documentElement.scrollTop; 
+                    if (percent >= 30 && percent > lastScrollTop){
+                        gsap.to(".med_il_instrument",{
+                        x: 200,
+                        scale : 2
+                        });
+                    } else if(percent <= 30 && st) {
+                        gsap.to(".med_il_instrument",{
+                        x: 200,
+                        scale : 1
+                        });
+                    }
+                    lastScrollTop = st <= 0 ? 0 : st; 
+                    console.log( "\t",  percent,  " :percent scrolled.  ",  st,   " : from top");
+
+        }
+        window.addEventListener('scroll', updateScrollPercentage)
+        
+
+    </script>
+
+</body>
+</html>

@@ -18,266 +18,532 @@
         <!--[if IE 8]>
         <link rel="stylesheet" href="css/ie8.css" />
         <![endif]-->
+        <script type="text/javascript" src="js/gsap.min.js"></script>
+        <script type="text/javascript" src="js/ScrollTrigger.min.js"></script>
     </head>
     <body>
+        <script>
+            $(function(){
+            $("#header-template").parent().load("header.html");
+            $("#header-template").remove();
+            $("#recentWork-template").load("recentWork.html");
+            $("#footer-template").load("footer.html");
+            });
+            </script>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">   
-       
-    <a class="navbar-brand" href="index.html">
-        <img class="siteLogo" src="./images/elements/site_logo.png">
-    </a>
-    <img  class="cmiLogoCenter" src="images/elements/CMI_logo.jpg" alt="CMI logo" />
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
+ 
+ 
+
+
+<style type="text/css">
+.column{
+    display: flex;
+    flex-direction: column;
+}
+    .panel.align-top {
+  -webkit-box-align: start;
+          align-items: flex-start;
+}
+
+.panel h1 {
+  font-size: 1.8em;
+  color: white;
+  font-weight: 300;
+}
+.panel.description {
+  padding-bottom: 60px;
+  display: flex;
+    flex-flow: column;
+}
+.panel p, .panel li {
+  font-weight: 400;
+  text-align: left;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0.3em 3em;
+}
+
+.whiteText{
+    color: #fff;
+}
+
+.panel p strong, .panel li strong {
+  color: white;
+  font-weight: 400;
+}
+.panel p code, .panel li code {
+  background-color: rgba(255,255,255,0.15);
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.panel li {
+  margin: 0;
+}
+.gray {
+  background-color: #777;
+  background-image: radial-gradient(circle at 47% 14%, rgba(205, 205, 205,0.04) 0%, rgba(205, 205, 205,0.04) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 35% 12%, rgba(215, 215, 215,0.04) 0%, rgba(215, 215, 215,0.04) 4%,transparent 4%, transparent 100%),radial-gradient(circle at 1% 35%, rgba(24, 24, 24,0.04) 0%, rgba(24, 24, 24,0.04) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 21% 1%, rgba(0, 0, 0,0.04) 0%, rgba(0, 0, 0,0.04) 26%,transparent 26%, transparent 100%),radial-gradient(circle at 23% 82%, rgba(249, 249, 249,0.04) 0%, rgba(249, 249, 249,0.04) 60%,transparent 60%, transparent 100%),radial-gradient(circle at 11% 54%, rgba(251, 251, 251,0.04) 0%, rgba(251, 251, 251,0.04) 23%,transparent 23%, transparent 100%),radial-gradient(circle at 69% 68%, rgba(234, 234, 234,0.04) 0%, rgba(234, 234, 234,0.04) 10%,transparent 10%, transparent 100%),-webkit-gradient(linear, left top, right top, from(#777),to(#606060));
+  background-image: radial-gradient(circle at 47% 14%, rgba(205, 205, 205,0.04) 0%, rgba(205, 205, 205,0.04) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 35% 12%, rgba(215, 215, 215,0.04) 0%, rgba(215, 215, 215,0.04) 4%,transparent 4%, transparent 100%),radial-gradient(circle at 1% 35%, rgba(24, 24, 24,0.04) 0%, rgba(24, 24, 24,0.04) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 21% 1%, rgba(0, 0, 0,0.04) 0%, rgba(0, 0, 0,0.04) 26%,transparent 26%, transparent 100%),radial-gradient(circle at 23% 82%, rgba(249, 249, 249,0.04) 0%, rgba(249, 249, 249,0.04) 60%,transparent 60%, transparent 100%),radial-gradient(circle at 11% 54%, rgba(251, 251, 251,0.04) 0%, rgba(251, 251, 251,0.04) 23%,transparent 23%, transparent 100%),radial-gradient(circle at 69% 68%, rgba(234, 234, 234,0.04) 0%, rgba(234, 234, 234,0.04) 10%,transparent 10%, transparent 100%),linear-gradient(90deg, #777,#606060);
+}
+.pink {
+  background-color: rgb(254 236 218);
+}
+.DMAgreen {
+  background-color: #22948f;
+}
+
+.DMAgreen .row{
+ border: 1px solid white;
+ margin:2%;
+ padding: 2%;
+ max-width: 98vw;
+}
+
+.DMAred {
+  background-color: #c82736;
+  color:green;
+}
+
+.white {
+  background-color: #fff;
+}
+.green {
+  background-color: #28a92b;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+.panel {
+	width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  align-content: flex-end;
+  /* -webkit-box-pack: center;
+          justify-content: center; */
+  -webkit-box-align: center;
+          align-items: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  position: relative;
+  box-sizing: border-box;
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link " href="about_us.html">About</a>
-          </li>
-        <li>
-        <li  class="nav-item "><a class="nav-link"  href="portfolio_filter.html">Portfolio</a> 
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="process.html">Process</a>
-        <li class="nav-item ">
-            <a class="nav-link" href="testimonials.html">
-              Testimonials</a>   
-          </li> 
-        <li class="search">
-         <script async src="https://cse.google.com/cse.js?cx=38fbc27169804413d"></script>
-      <div class="gcse-search" ></div>
-        <style>
-            .gsc-search-button-v2 {
-                  border-color: #952a28;
-                  background-color: #952a28;
-              }
-              .gsc-search-button-v2:hover {
-                  border-color: #b94644;
-                  background-color: #d14744;
-              }
-              .gsc-control-cse {
-                  padding: 2.5em;
-              }
-        </style>
+}
+
+.panel:first-of-type{
+    height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.illustration{
+    position: relative;
+}
+
+.med_il{
+    width: 50%;
+    left: 50%;
+}
+
+#med_il_instrument{
+    width: 50%;
+    left: 0; 
+    position: absolute;
+    z-index: 5; 
+}
+
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding: 6px 10px 10px 10px;
+  border-bottom-right-radius: 26px;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.boxBorder{
+    border: 1px solid #fff;
+    padding: 15% 10px;
+    margin: 20px;
+}
+
+/* HEADINGS */
+.header-section {
+  padding: 0 15px;
+  text-align: center;
+  margin: 40vh auto 50vh;
+}
+
+/* SCROLL DOWN */ 
+.scroll-down {
+  position: absolute; 
+  bottom: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  color: black;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 16px;
+  overflow: visible;
+}
+.scroll-down .arrow {
+  position: relative;
+  top: -4px;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
+  background-size: contain;
+}
+
+.navbar{
+    position: sticky;
+    z-index: 100;
+}
+
+.panel.pink h1{
+    color: #ef3734;
+}
+
+</style>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">   
+        <div id="header-template"></div>
+   
+   </nav>
+<div class="description panel pink">
+    <div>
+        
+        <div class="slider">
+            <div class="rs_mainslider">
+                <ul class="rs_mainslider_items">
+                    <li class="rs_mainslider_items_active">
+                         <img class="rs_mainslider_items_image" src="images/slider/slide_1.png" alt="project" />
+                        <div class="rs_mainslider_items_text">
+                            Above-elbow arm transplant
+                        </div>
+                    </li>
+                    <li> <img class="rs_mainslider_items_image" src="images/slider/slide_2.png" alt="project" />
+                        <div class="rs_mainslider_items_text"> 
+                            FIRST PENIS AND SCROTUM TRANSPLANT
+                        </div>
+                    </li>
+                    <li> <img class="rs_mainslider_items_image" src="images/slider/slide_3.png" alt="project" />
+                        <div class="rs_mainslider_items_text">
+                            PENIS AND SCROTUM TRANSPLANT
+                        </div>
+                    </li>
+                    <li> <img class="rs_mainslider_items_image" src="images/slider/slide_4.png" alt="project" />
+                        <div class="rs_mainslider_items_text">
+                            TRANSORAL THYROIDECTOMY
+                        </div>
+                    </li>
+                    <li> <img class="rs_mainslider_items_image" src="images/slider/slide_5.png" alt="project" />
+                        <div class="rs_mainslider_items_text">
+                            Surgical Illustration
+                        </div>
+                    </li>
+                    <li> <img class="rs_mainslider_items_image" src="images/slider/slide_6.png" alt="project" />
+                        <div class="rs_mainslider_items_text">
+                            Medical Illustration
+                                                                                                                            </li>
+                    <li> <img class="rs_mainslider_items_image" src="images/slider/slide_7.png" alt="project" />
+                        <div class="rs_mainslider_items_text">
+                            Animation
+                        </div>
+                    </li>
+                          <li> <img class="rs_mainslider_items_image" src="images/slider/slide_8.png" alt="project" />
+                        <div class="rs_mainslider_items_text">
+                            Illustration
+                        </div>
+                    </li>
+                </ul>
+                <div class="rs_mainslider_left_container rs_center_vertical_container">
+                    <div class="rs_mainslider_left rs_center_vertical"></div>
+                </div>
+                <div class="rs_mainslider_right_container rs_center_vertical_container">
+                    <div class="rs_mainslider_right rs_center_vertical"></div>
+                </div>
+                <div class="rs_mainslider_dots_container rs_center_horizontal_container">
+                    <ul class="rs_mainslider_dots rs_center_horizontal">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+      <div class="scroll-down">
+          <div class="row">
+              
+          </div>
+          <h1>WHY CHOOSE US ?</h1>
+        <p></p>Scroll down<div class="arrow"></div></div>
+    </div>
     
-      </li>
-      </li>
-    </div>             
-     </li>
-      </ul>
-    </nav>
-                <div class="slider">
-                    <div class="rs_mainslider">
-                        <ul class="rs_mainslider_items">
-                            <li class="rs_mainslider_items_active">
-                                 <img class="rs_mainslider_items_image" src="images/slider/slide_1.png" alt="project" />
-                                <div class="rs_mainslider_items_text">
-                                    Above-elbow arm transplant
+  </div>
+
+<section class="panel DMAred ">
+    <div class="row boxBorder">
+        <h1>WHAT IS MEDICAL ILLUSTRATION ?</h1>
+    <p class="whiteText">Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.</p>
+    </div>
+    <div class="illustration">
+          <img id="med_il" src="images/elements/med_il.jpg" alt="">
+    <img id="med_il_instrument"  src="images/elements/med_il_instrument.PNG" alt="">  
+    </div>
+
+</section>
+<section class="panel DMAgreen">
+    <div class="column">
+      <div class="row">
+      <h1>WHY CHOOSE US ?</h1>
+    <p>Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.</p>
+      <img src="images/slider/slide_6.png" alt="">
+    </div>       
+    </div>
+
+
+</section>
+<section class="panel pink">
+    <div class="row">
+        <div class="column">
+             <h1>ABOUT DEVON MEDICAL ART</h1>
+                <p>Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.</p>
+     </div>
+     <div>
+         <div class="column">   
+            <h1>WORK WITH DEVON</h1>
+            <p>Estimates are usually available by the next business day.
+                <a href="contacts.html">Contact Devon</a> to share your project needs.</p>
+         </div>
+        </div>
+         
+
+</section>
+<section class="panel white column">
+      <!-- START RECENT WQRKS -->
+         <div class="recent_works">
+            <div class="container">
+
+                <h3>Recent work</h3>
+
+                <div class="portfolio">
+                    <div class="row">
+
+                        <div class="span3 recent">
+                            <div class="portfolio_item">
+                                <div class="item_hover">
+                                    <div class="item_title">Penis transplant</div>
+                                    <ul class="item_tags">
+                                        <li><a href="#">Surgical illustration and animation</a></li>
+                                    </ul>
+                                    <a href="portfolio_d1.html" class="button_color">view</a>
                                 </div>
-                            </li>
-                            <li> <img class="rs_mainslider_items_image" src="images/slider/slide_2.png" alt="project" />
-                                <div class="rs_mainslider_items_text"> 
-                                    FIRST PENIS AND SCROTUM TRANSPLANT
+                                <div class="item_image">
+                                    <img src="images/portfolio/item_d1.png" alt="portfolio 1" />
                                 </div>
-                            </li>
-                            <li> <img class="rs_mainslider_items_image" src="images/slider/slide_3.png" alt="project" />
-                                <div class="rs_mainslider_items_text">
-                                    PENIS AND SCROTUM TRANSPLANT
-                                </div>
-                            </li>
-                            <li> <img class="rs_mainslider_items_image" src="images/slider/slide_4.png" alt="project" />
-                                <div class="rs_mainslider_items_text">
-                                    TRANSORAL THYROIDECTOMY
-                                </div>
-                            </li>
-                            <li> <img class="rs_mainslider_items_image" src="images/slider/slide_5.png" alt="project" />
-                                <div class="rs_mainslider_items_text">
-                                    Surgical Illustration
-                                </div>
-							</li>
-                            <li> <img class="rs_mainslider_items_image" src="images/slider/slide_6.png" alt="project" />
-                                <div class="rs_mainslider_items_text">
-                                    Medical Illustration
-																		                                                            </li>
-                            <li> <img class="rs_mainslider_items_image" src="images/slider/slide_7.png" alt="project" />
-                                <div class="rs_mainslider_items_text">
-                                    Animation
-                                </div>
-                            </li>
-							      <li> <img class="rs_mainslider_items_image" src="images/slider/slide_8.png" alt="project" />
-                                <div class="rs_mainslider_items_text">
-                                    Illustration
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="rs_mainslider_left_container rs_center_vertical_container">
-                            <div class="rs_mainslider_left rs_center_vertical"></div>
+                            </div>
                         </div>
-                        <div class="rs_mainslider_right_container rs_center_vertical_container">
-                            <div class="rs_mainslider_right rs_center_vertical"></div>
+
+                        <div class="span3 recent">
+                            <div class="portfolio_item">
+                                <div class="item_hover">
+                                    <div class="item_title">Immunotherapy</div>
+                                    <ul class="item_tags">
+                                        <li><a href="#">3D animation</a></li>
+                                    </ul>
+                                    <a href="portfolio_d2.html" class="button_color">view</a>
+                                </div>
+                                <div class="item_image">
+                                    <img src="images/portfolio/item_d2.png" alt="portfolio 1" />
+                                </div>
+                            </div>
                         </div>
-                        <div class="rs_mainslider_dots_container rs_center_horizontal_container">
-                            <ul class="rs_mainslider_dots rs_center_horizontal">
-                            </ul>
+
+                        <div class="span3 recent">
+                            <div class="portfolio_item">
+                                <div class="item_hover">
+                                    <div class="item_title">Video Atlas of Neurosurgery</div>
+                                    <ul class="item_tags">
+                                        <li><a href="#">Sugical illustration</a></li>
+                                    </ul>
+                                    <a href="portfolio_d3.html" class="button_color">view</a>
+                                </div>
+                                <div class="item_image">
+                                    <img src="images/portfolio/item_d3.png" alt="portfolio 1" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="span3 recent">
+                            <div class="portfolio_item">
+                                <div class="item_hover">
+                                    <div class="item_title">Transoral thyroidectomy</div>
+                                    <ul class="item_tags">
+                                        <li><a href="#">Surgical animation</a></li>
+                                    </ul>
+                                    <a href="portfolio_d4.html" class="button_color">view</a>
+                                </div>
+                                <div class="item_image">
+                                    <img src="images/portfolio/item_d4.png" alt="portfolio 1" />
+                                </div>
+                            </div>                             
+                        </div>
+
+                    </div>
+                </div>
+
+                <a href="portfolio_gallery.html" class="button_white">see all</a>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- END RECENT WQRKS -->
+
+
+          <!-- START CLIENTS -->
+          <div class="clients">
+            <h3> Select clients</h3>
+                <div>
+                    <ul class="selectClients" data-num-items="6">
+                        <li class="span2"><a href="#"><img src="images/clients/clients_1.png" alt="clients" /></a></li> 
+                        <li class="span2"><a href="#"><img src="images/clients/clients_2.png" alt="clients" /></a></li> 
+                        <li class="span2"><a href="#"><img src="images/clients/clients_3.png" alt="clients" /></a></li> 
+                        <li class="span2"><a href="#"><img src="images/clients/clients_4.png" alt="clients" /></a></li> 
+                        <li class="span2"><a href="#"><img src="images/clients/clients_5.png" alt="clients" /></a></li> 
+                        <li class="span2"><a href="#"><img src="images/clients/clients_6.png" alt="clients" /></a></li> 
+                     </ul>
+                </div>              
+  </div>
+    <!-- END CLIENTS -->
+    <section class="footer">
+
+            <div class="row">
+                <div class="span4">
+                    <div class="widget-title">contact info</div>
+                    <ul class="contact_widget">
+                        <li class="phone">001 717 534 1781</li>
+                      <li class="mail"><a href="mailto:devonmedicalart@gmail.com">devonmedicalart@gmail.com</a></li>
+                      <li class="location">Hershey PA USA</li>
+                    </ul>
+              </div>
+    </section>
+</section>
+
+
+<script>
+    const updateScrollPercentage = function() { 
+		    const heightOfWindow = window.innerHeight,
+				contentScrolled = window.pageYOffset,
+				bodyHeight = document.body.offsetHeight;
+
+
+				let  total = bodyHeight - heightOfWindow,
+					got = contentScrolled,
+                    percent = parseInt((got/heightOfWindow) * 100),
+                    lastScrollTop = 0;
+
+
+                    var st = window.pageYOffset || document.documentElement.scrollTop; 
+                    if (percent >= 30 && percent > lastScrollTop){
+                        gsap.fromTo("#med_il_instrument",
+                            { x:-50, y: 80, scale : 2.3},
+                            { x:0, y: 70, scale : 2
+                            }
+                        )
+                    } else if(percent <= 30 ) {
+                        gsap.fromTo("#med_il_instrument",
+                        { x:-50, y: 80, scale : 2.3},
+                            { x:0, y: 70, scale : 2});
+                    }
+                    lastScrollTop = st <= 0 ? 0 : st; 
+                    console.log( "\t",  percent,  " :percent scrolled.  ",  st,   " : from top");
+
+        }
+        window.addEventListener('scroll', updateScrollPercentage)
+        
+
+        gsap.utils.toArray(".panel").forEach((panel, i) => {
+        ScrollTrigger.create({
+            trigger: panel,
+            start: "top top", 
+            pin: true, 
+            pinSpacing: false 
+        });
+        });
+
+
+        // ScrollTrigger.create({
+        // snap: 1 / 4 // snap whole page to the closest section!
+        // });
+
+
+    </script>
+
+
+    <div class="row center">
+        <div class="chooseUs">
+            <!-- START ACCORDION -->
+            <h3 class="hide">Why choose us ?</h3>
+            <div id="accordion" class="accordion_v2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#content_1">
+                            <span>What is medical illustration ?</span>
+                        </a>
+                    </div>
+                    <div id="content_1" class="accordion-body collapse" style="height: 0px;">
+                        <div class="accordion-inner">
+                            Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.
                         </div>
                     </div>
                 </div>
-  
-
-                    <div class="row center">
-                        <div class="chooseUs">
-                            <!-- START ACCORDION -->
-                            <h3 class="hide">Why choose us ?</h3>
-                            <div id="accordion" class="accordion_v2">
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#content_1">
-                                            <span>What is medical illustration ?</span>
-                                        </a>
-                                    </div>
-                                    <div id="content_1" class="accordion-body collapse" style="height: 0px;">
-                                        <div class="accordion-inner">
-                                           Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.
-                                        </div>
-                                    </div>
-                              </div>
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#content_2">
-                                            <span> About Devon Medical Art</span>
-                                        </a>                                                
-                                    </div>
-                                    <div id="content_2" class="accordion-body collapse">
-                                        <div class="accordion-inner">
-                                            DMA's artwork has appeared in surgical textbooks, heath education websites, conference presentations, patient education films, journals, and iPhone® Apps. Subjects have included head and neck anatomy, facial plastic surgery, breast reconstruction, biomedical devices, pharmaceutical MOA, novel transplant surgery and cancer staging. 
-                                        </div>
-                                    </div>
-                                </div>
-                              <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#content_3">
-                                            <span>Work with Devon</span>
-                                        </a>
-                                    </div>
-                                    <div id="content_3" class="accordion-body collapse">
-                                        <div class="accordion-inner">
-                                            Estimates are usually available by the next business day. <li><a href="contacts.html">Contact Devon</a> to share your project needs. 
-                                        </li></div>
-                                    </div>
-                                </div>
-                          </div>
-                            <!-- END ACCORDION -->
-                      </div>          
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#content_2">
+                            <span> About Devon Medical Art</span>
+                        </a>                                                
                     </div>
+                    <div id="content_2" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            DMA's artwork has appeared in surgical textbooks, heath education websites, conference presentations, patient education films, journals, and iPhone® Apps. Subjects have included head and neck anatomy, facial plastic surgery, breast reconstruction, biomedical devices, pharmaceutical MOA, novel transplant surgery and cancer staging. 
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#content_3">
+                            <span>Work with Devon</span>
+                        </a>
+                    </div>
+                    <div id="content_3" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            Estimates are usually available by the next business day. <li><a href="contacts.html">Contact Devon</a> to share your project needs. 
+                        </li></div>
+                    </div>
+                </div>
+            </div>
+            <!-- END ACCORDION -->
+        </div>          
+    </div>
             
 
-                                   <!-- START RECENT WQRKS -->
-                                   <div class="recent_works">
-                                    <div class="container">
-                
-                                        <h3>Recent work</h3>
-                
-                                        <div class="portfolio">
-                                            <div class="row">
-                
-                                                <div class="span3 recent">
-                                                    <div class="portfolio_item">
-                                                        <div class="item_hover">
-                                                            <div class="item_title">Penis transplant</div>
-                                                            <ul class="item_tags">
-                                                                <li><a href="#">Surgical illustration and animation</a></li>
-                                                            </ul>
-                <a href="portfolio_d1.html" class="button_color">view</a>
-                                                        </div>
-                                                        <div class="item_image">
-                                                            <img src="images/portfolio/item_d1.png" alt="portfolio 1" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                
-                                                <div class="span3 recent">
-                                                    <div class="portfolio_item">
-                                                        <div class="item_hover">
-                                                            <div class="item_title">Immunotherapy</div>
-                                                            <ul class="item_tags">
-                                                                <li><a href="#">3D animation</a></li>
-                                                            </ul>
-                                                            <a href="portfolio_d2.html" class="button_color">view</a>
-                                                        </div>
-                                                        <div class="item_image">
-                                                            <img src="images/portfolio/item_d2.png" alt="portfolio 1" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                
-                                                <div class="span3 recent">
-                                                    <div class="portfolio_item">
-                                                        <div class="item_hover">
-                                                            <div class="item_title">Video Atlas of Neurosurgery</div>
-                                                            <ul class="item_tags">
-                                                                <li><a href="#">Sugical illustration</a></li>
-                                                            </ul>
-                                                            <a href="portfolio_d3.html" class="button_color">view</a>
-                                                        </div>
-                                                        <div class="item_image">
-                                                            <img src="images/portfolio/item_d3.png" alt="portfolio 1" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                
-                                                <div class="span3 recent">
-                                                    <div class="portfolio_item">
-                                                        <div class="item_hover">
-                                                            <div class="item_title">Transoral thyroidectomy</div>
-                                                            <ul class="item_tags">
-                                                                <li><a href="#">Surgical animation</a></li>
-                                                            </ul>
-                                                            <a href="portfolio_d4.html" class="button_color">view</a>
-                                                        </div>
-                                                        <div class="item_image">
-                                                            <img src="images/portfolio/item_d4.png" alt="portfolio 1" />
-                                                        </div>
-                                                    </div>                             
-                                                </div>
-                
-                                            </div>
-                                        </div>
-                
-                                        <a href="portfolio_filter.html" class="button_white">see all</a>
-                                        <div class="clear"></div>
-                                    </div>
-                              </div>
-                                <!-- END RECENT WQRKS -->
-
-            <div id="footer-template"></div>
-                      <!-- START CLIENTS -->
-                      <div class="clients">
-                        <h3> Select clients</h3>
-                            <div>
-                                <ul class="selectClients" data-num-items="6">
-                                    <li class="span2"><a href="#"><img src="images/clients/clients_1.png" alt="clients" /></a></li> 
-                                    <li class="span2"><a href="#"><img src="images/clients/clients_2.png" alt="clients" /></a></li> 
-                                    <li class="span2"><a href="#"><img src="images/clients/clients_3.png" alt="clients" /></a></li> 
-                                    <li class="span2"><a href="#"><img src="images/clients/clients_4.png" alt="clients" /></a></li> 
-                                    <li class="span2"><a href="#"><img src="images/clients/clients_5.png" alt="clients" /></a></li> 
-                                    <li class="span2"><a href="#"><img src="images/clients/clients_6.png" alt="clients" /></a></li> 
-                                 </ul>
-                            </div>              
-              </div>
-                <!-- END CLIENTS -->
-                <section class="footer">
-                        <div class="row center">
-                            <div class="span4">
-                                <div class="widget-title">contact info</div>
-                                <ul class="contact_widget">
-                                    <li class="phone">001 717 534 1781</li>
-                                  <li class="mail"><a href="mailto:devonmedicalart@gmail.com">devonmedicalart@gmail.com</a></li>
-                                  <li class="location">Hershey PA USA</li>
-                                </ul>
-                          </div>
-                </section>
+            
+       </section>
 
 
             <script src="js/modernizr.custom.63321.js"></script>
