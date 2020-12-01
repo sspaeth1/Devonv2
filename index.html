@@ -32,195 +32,6 @@
             </script>
     
 
- 
- 
-
-
-<style type="text/css">
-.column{
-    display: flex;
-    flex-direction: column;
-}
-    .panel.align-top {
-  -webkit-box-align: start;
-          align-items: flex-start;
-}
-
-.panel h1 {
-  font-size: 1.8em;
-  color: white;
-  font-weight: 300;
-}
-.panel.description {
-  padding-bottom: 60px;
-  display: flex;
-    flex-flow: column;
-}
-.panel p, .panel li {
-  font-weight: 400;
-  text-align: left;
-  font-size: 0.8em;
-  line-height: 1.5em;
-  margin: 0.3em 3em;
-}
-
-.whiteText{
-    color: #fff;
-}
-
-.panel p strong, .panel li strong {
-  color: white;
-  font-weight: 400;
-}
-.panel p code, .panel li code {
-  background-color: rgba(255,255,255,0.15);
-  padding: 2px 4px;
-  border-radius: 5px;
-}
-
-.panel li {
-  margin: 0;
-}
-.gray {
-  background-color: #777;
-  background-image: radial-gradient(circle at 47% 14%, rgba(205, 205, 205,0.04) 0%, rgba(205, 205, 205,0.04) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 35% 12%, rgba(215, 215, 215,0.04) 0%, rgba(215, 215, 215,0.04) 4%,transparent 4%, transparent 100%),radial-gradient(circle at 1% 35%, rgba(24, 24, 24,0.04) 0%, rgba(24, 24, 24,0.04) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 21% 1%, rgba(0, 0, 0,0.04) 0%, rgba(0, 0, 0,0.04) 26%,transparent 26%, transparent 100%),radial-gradient(circle at 23% 82%, rgba(249, 249, 249,0.04) 0%, rgba(249, 249, 249,0.04) 60%,transparent 60%, transparent 100%),radial-gradient(circle at 11% 54%, rgba(251, 251, 251,0.04) 0%, rgba(251, 251, 251,0.04) 23%,transparent 23%, transparent 100%),radial-gradient(circle at 69% 68%, rgba(234, 234, 234,0.04) 0%, rgba(234, 234, 234,0.04) 10%,transparent 10%, transparent 100%),-webkit-gradient(linear, left top, right top, from(#777),to(#606060));
-  background-image: radial-gradient(circle at 47% 14%, rgba(205, 205, 205,0.04) 0%, rgba(205, 205, 205,0.04) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 35% 12%, rgba(215, 215, 215,0.04) 0%, rgba(215, 215, 215,0.04) 4%,transparent 4%, transparent 100%),radial-gradient(circle at 1% 35%, rgba(24, 24, 24,0.04) 0%, rgba(24, 24, 24,0.04) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 21% 1%, rgba(0, 0, 0,0.04) 0%, rgba(0, 0, 0,0.04) 26%,transparent 26%, transparent 100%),radial-gradient(circle at 23% 82%, rgba(249, 249, 249,0.04) 0%, rgba(249, 249, 249,0.04) 60%,transparent 60%, transparent 100%),radial-gradient(circle at 11% 54%, rgba(251, 251, 251,0.04) 0%, rgba(251, 251, 251,0.04) 23%,transparent 23%, transparent 100%),radial-gradient(circle at 69% 68%, rgba(234, 234, 234,0.04) 0%, rgba(234, 234, 234,0.04) 10%,transparent 10%, transparent 100%),linear-gradient(90deg, #777,#606060);
-}
-.pink {
-  background-color: rgb(254 236 218);
-}
-.DMAgreen {
-  background-color: #22948f;
-}
-
-.DMAgreen .row{
- border: 1px solid white;
- margin:2%;
- padding: 2%;
- max-width: 98vw;
-}
-
-.DMAred {
-  background-color: #c82736;
-  color:green;
-}
-
-.white {
-  background-color: #fff;
-}
-.green {
-  background-color: #28a92b;
-}
-
-html, body {
-  margin: 0;
-  height: 100%;
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-}
-
-.panel {
-	width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: flex;
-  align-content: flex-end;
-  /* -webkit-box-pack: center;
-          justify-content: center; */
-  -webkit-box-align: center;
-          align-items: center;
-  font-weight: 600;
-  font-size: 1.5em;
-  text-align: center;
-  color: white;
-  position: relative;
-  box-sizing: border-box;
-  
-}
-
-.panel:first-of-type{
-    height: 100%;
-}
-
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.illustration{
-    position: relative;
-}
-
-.med_il{
-    width: 50%;
-    left: 50%;
-}
-
-#med_il_instrument{
-    width: 50%;
-    left: 0; 
-    position: absolute;
-    z-index: 5; 
-}
-
-
-/* HEADER */
-header {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  padding: 6px 10px 10px 10px;
-  border-bottom-right-radius: 26px;
-  z-index: 100;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.boxBorder{
-    border: 1px solid #fff;
-    padding: 15% 10px;
-    margin: 20px;
-}
-
-/* HEADINGS */
-.header-section {
-  padding: 0 15px;
-  text-align: center;
-  margin: 40vh auto 50vh;
-}
-
-/* SCROLL DOWN */ 
-.scroll-down {
-  position: absolute; 
-  bottom: 20%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  color: black;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 16px;
-  overflow: visible;
-}
-.scroll-down .arrow {
-  position: relative;
-  top: -4px;
-  margin: 0 auto;
-  width: 20px;
-  height: 20px;
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
-  background-size: contain;
-}
-
-.navbar{
-    position: sticky;
-    z-index: 100;
-}
-
-.panel.pink h1{
-    color: #ef3734;
-}
-
-</style>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">   
         <div id="header-template"></div>
@@ -253,14 +64,6 @@ header {
                             TRANSORAL THYROIDECTOMY
                         </div>
                     </li>
-                    <li> <img class="rs_mainslider_items_image" src="images/slider/slide_5.png" alt="project" />
-                        <div class="rs_mainslider_items_text">
-                            Surgical Illustration
-                        </div>
-                    </li>
-                    <li> <img class="rs_mainslider_items_image" src="images/slider/slide_6.png" alt="project" />
-                        <div class="rs_mainslider_items_text">
-                            Medical Illustration
                                                                                                                             </li>
                     <li> <img class="rs_mainslider_items_image" src="images/slider/slide_7.png" alt="project" />
                         <div class="rs_mainslider_items_text">
@@ -297,33 +100,41 @@ header {
     
   </div>
 
-<section class="panel DMAred ">
-    <div class="row boxBorder">
+<section class="panel DMAred">
+    <div class="row">
+         <div class="column boxBorder">
         <h1>WHAT IS MEDICAL ILLUSTRATION ?</h1>
     <p class="whiteText">Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.</p>
     </div>
     <div class="illustration">
-          <img id="med_il" src="images/elements/med_il.jpg" alt="">
-    <img id="med_il_instrument"  src="images/elements/med_il_instrument.PNG" alt="">  
+          <img id="med_il" src="images/elements/med_il.jpg" alt="Medical illustration">
+          <img id="med_il_instrument"  src="images/elements/med_il_instrument.png" alt="medical device">  
+    </div>   
     </div>
+
 
 </section>
 <section class="panel DMAgreen">
-    <div class="column">
-      <div class="row">
+    <div class="column ">
+      <div class="row boxBorder">
       <h1>WHY CHOOSE US ?</h1>
-    <p>Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.</p>
-      <img src="images/slider/slide_6.png" alt="">
+      <p>Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.</p>
+      </div>
+      <div class="row">
+      <img src="images/slider/slide_6.png" alt=" medical illustration sketch">
     </div>       
     </div>
 
 
 </section>
-<section class="panel pink">
+<section class="panel DMApink">
     <div class="row">
         <div class="column">
              <h1>ABOUT DEVON MEDICAL ART</h1>
                 <p>Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.</p>
+     </div>
+     <div>
+         <img src="images/slider/slide_8.png" alt="">
      </div>
      <div>
          <div class="column">   
@@ -340,75 +151,10 @@ header {
          <div class="recent_works">
             <div class="container">
 
-                <h3>Recent work</h3>
+   
 
-                <div class="portfolio">
-                    <div class="row">
 
-                        <div class="span3 recent">
-                            <div class="portfolio_item">
-                                <div class="item_hover">
-                                    <div class="item_title">Penis transplant</div>
-                                    <ul class="item_tags">
-                                        <li><a href="#">Surgical illustration and animation</a></li>
-                                    </ul>
-                                    <a href="portfolio_d1.html" class="button_color">view</a>
-                                </div>
-                                <div class="item_image">
-                                    <img src="images/portfolio/item_d1.png" alt="portfolio 1" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="span3 recent">
-                            <div class="portfolio_item">
-                                <div class="item_hover">
-                                    <div class="item_title">Immunotherapy</div>
-                                    <ul class="item_tags">
-                                        <li><a href="#">3D animation</a></li>
-                                    </ul>
-                                    <a href="portfolio_d2.html" class="button_color">view</a>
-                                </div>
-                                <div class="item_image">
-                                    <img src="images/portfolio/item_d2.png" alt="portfolio 1" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="span3 recent">
-                            <div class="portfolio_item">
-                                <div class="item_hover">
-                                    <div class="item_title">Video Atlas of Neurosurgery</div>
-                                    <ul class="item_tags">
-                                        <li><a href="#">Sugical illustration</a></li>
-                                    </ul>
-                                    <a href="portfolio_d3.html" class="button_color">view</a>
-                                </div>
-                                <div class="item_image">
-                                    <img src="images/portfolio/item_d3.png" alt="portfolio 1" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="span3 recent">
-                            <div class="portfolio_item">
-                                <div class="item_hover">
-                                    <div class="item_title">Transoral thyroidectomy</div>
-                                    <ul class="item_tags">
-                                        <li><a href="#">Surgical animation</a></li>
-                                    </ul>
-                                    <a href="portfolio_d4.html" class="button_color">view</a>
-                                </div>
-                                <div class="item_image">
-                                    <img src="images/portfolio/item_d4.png" alt="portfolio 1" />
-                                </div>
-                            </div>                             
-                        </div>
-
-                    </div>
-                </div>
-
-                <a href="portfolio_gallery.html" class="button_white">see all</a>
+                <a href="portfolio_gallery.html" class="button_white">See Porfolio Here</a>
                 <div class="clear"></div>
             </div>
         </div>
@@ -431,9 +177,7 @@ header {
   </div>
     <!-- END CLIENTS -->
     <section class="footer">
-
-            <div class="row">
-                <div class="span4">
+            <div class="column">
                     <div class="widget-title">contact info</div>
                     <ul class="contact_widget">
                         <li class="phone">001 717 534 1781</li>
@@ -461,14 +205,14 @@ header {
                     var st = window.pageYOffset || document.documentElement.scrollTop; 
                     if (percent >= 30 && percent > lastScrollTop){
                         gsap.fromTo("#med_il_instrument",
-                            { x:-50, y: 80, scale : 2.3},
-                            { x:0, y: 70, scale : 2
+                            { x:-50, y: 30, scale : 2.3},
+                            { x:10, y: 65, scale : 2
                             }
                         )
                     } else if(percent <= 30 ) {
                         gsap.fromTo("#med_il_instrument",
-                        { x:-50, y: 80, scale : 2.3},
-                            { x:0, y: 70, scale : 2});
+                        { x:-50, y: 30, scale : 2.3},
+                            { x:10, y: 65, scale : 2});
                     }
                     lastScrollTop = st <= 0 ? 0 : st; 
                     console.log( "\t",  percent,  " :percent scrolled.  ",  st,   " : from top");
