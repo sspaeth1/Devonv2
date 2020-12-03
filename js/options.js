@@ -666,8 +666,8 @@ $(document).ready(function () {
 var load_main_slider = function () {
   $(".rs_mainslider").each(function () {
     var t_time = 1000; //time for transition animation
-    var t_interval_time = 6000; //time for slide change, must be equal or bigger then effect transition time;
-    var t_resume_time = 10000; //time to resume autoplay after a click
+    var t_interval_time = 4500; //time for slide change, must be equal or bigger then effect transition time;
+    var t_resume_time = 6000; //time to resume autoplay after a click
     var t_hover_time = 200; //time for hover eefect
     var t_text_time = 500; //time for text animation
     var t = $(this);
