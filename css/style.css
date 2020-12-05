@@ -246,8 +246,13 @@ img.wp-smiley,
   background-color: rgb(254 236 218);
 }
 
+.DMApink{
+    background: linear-gradient(0deg, rgba(200,39,54,1) 0%, rgba(254,236,218,1) 43%);
+}
+
 .DMAgreen {
   background-color: #22948f;
+  background: linear-gradient(0deg, rgba(53,81,106,1) 60%, rgba(34,148,143,1) 80%);
 }
 
 .DMAgreen .row:first-of-type{
@@ -261,6 +266,7 @@ img.wp-smiley,
 
 .DMAred {
   background-color: #c82736;
+  background: linear-gradient(0deg, rgba(146,28,39,1) 18%, rgba(200,39,54,1) 61%);
 }
 
 .white {
@@ -283,8 +289,6 @@ html, body {
   display: -webkit-flex;
   display: flex;
   align-content: flex-start;
-  /* -webkit-box-pack: center;
-          justify-content: center; */
   -webkit-box-align: center;
   font-weight: 600;
   font-size: 1.5em;
@@ -297,6 +301,16 @@ html, body {
     align-items: flex-start;
 }
 
+.panel.white .recent_works .column {
+    border: black 1px solid;
+    margin: 2%;
+    padding: 5%;
+    color: black;
+}
+
+.panel.white h1{
+    color:black;
+}
 
 .panel:first-of-type{
     height: 100%;
@@ -324,6 +338,27 @@ body {
     z-index: 5; 
 }
 
+@media screen and ( max-width: 1010px){
+    .panel {
+        font-size: 1.25em;
+    } 
+    .panel:first-of-type {
+        height: 85%;
+    }
+    .DMAgreen {
+        background: #22948f;  
+    }
+    .DMAgreen img, .DMApink img{
+        max-width: 233vw;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .DMApink {
+        background: #feecda;  
+    }
+}
+
 
 /* HEADER */
 header {
@@ -345,6 +380,8 @@ header {
     margin: 2%;
     max-width: 45%;
     }
+
+  
 .DMAred .row, .DMAgreen .row, .DMApink .row{
     justify-content: center;
     align-items: center;
@@ -370,6 +407,22 @@ header {
 .panel.DMAgreen .column{
         justify-content: start;
     }
+
+@media screen and (max-width: 600px){
+    .DMAred .boxBorder {
+        padding: 15% 10px;
+        margin: 2%;
+        max-width: 87%;
+    }
+    .DMAgreen .column .row.boxBorder,
+    .panel.DMApink .row .column{
+        min-height: 70vh;
+    }
+
+
+}
+  
+    
 /* HEADINGS */
 .header-section {
   padding: 0 15px;
@@ -398,6 +451,22 @@ header {
   height: 20px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
   background-size: contain;
+}
+
+@media screen and (max-width: 600px){
+    .scroll-down {
+        position: absolute; 
+        bottom: 10%;
+        left: 50%;
+    }
+}
+
+@media screen and (min-width: 1680px){
+    .scroll-down {
+        position: absolute; 
+        bottom: 30%;
+        left: 50%;
+    } 
 }
 
 .navbar{
@@ -3134,7 +3203,44 @@ video{
     max-height: 100px;
 }
 
+#arrows{
+    position: relative;;
+}
+img.skull{
+    position: relative;
+}
 
+#arrow_top{
+    position: absolute;
+    left: 35%;
+    top: 7%;
+    z-index: 10;
+    width: 21%;
+}
+#arrow_bottom{
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    z-index: 10;
+    width: 21%;
+}
+
+
+.path{
+    stroke-dasharray: 20;
+    stroke-dashoffset: 5;
+    animation: dash 20s linear  infinite;
+    
+}
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 822;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 /* ========================= CLIENTS ========================= */
 
 
@@ -3221,6 +3327,7 @@ video{
 .slider .carousel-control.right {
     right: 15px;
 }
+
 .rs_mainslider {
     position: relative;
 }
@@ -3249,6 +3356,7 @@ video{
     width:100%;
     height:auto;
 }
+
 .rs_mainslider ul.rs_mainslider_items li .rs_mainslider_items_text {
     position: absolute;
     top: 130px;
@@ -3266,8 +3374,14 @@ video{
 
 @media screen and (max-width: 979px){
     .rs_mainslider ul.rs_mainslider_items li .rs_mainslider_items_text {
-    visibility: hidden;
+    visibility: visible;
     } 
+    .rs_mainslider{
+        height: 350px;
+    }
+    .rs_mainslider ul.rs_mainslider_items li .rs_mainslider_items_image{
+        width: 365%;
+    }
 }
 
 .rs_mainslider ul.rs_mainslider_items li .rs_mainslider_items_text span {

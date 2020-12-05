@@ -12,15 +12,30 @@
         <link href='https://fonts.googleapis.com/css?family=Enriqueta:400,700|Open+Sans:400italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css" />
-        <script src="js/jquery-1.10.0.min.js"></script>
+        <script src="js/jquery-1.10.0.min.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
         <!--[if IE 8]>
         <link rel="stylesheet" href="css/ie8.css" />
         <![endif]-->
-        <script type="text/javascript" src="js/gsap.min.js"></script>
-        <script type="text/javascript" src="js/ScrollTrigger.min.js"></script>
-    </head>
+        <script id="GSAP" type="text/javascript" src="js/gsap.min.js"></script>
+        <script id="scrollScript" src="js/ScrollTrigger.min.js"></script>
+        <script>
+
+            if(window.innerWidth <  600 ){
+                console.log('small screen');
+               document.getElementById("scrollScript");
+                   let script = document.createElement('script');
+                   script.id = "scrollScript";
+                   script.src = "js/ScrollTrigger.min.js";
+                   document.getElementById('GSAP').appendChild(script);
+               }
+
+  
+
+        </script>
+
+   </head>
     <body>
         <script>
             $(function(){
@@ -31,8 +46,6 @@
             });
             </script>
     
-
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">   
         <div id="header-template"></div>
    
@@ -88,7 +101,6 @@
                 </div>
             </div>
         </div>
-
         
       <div class="scroll-down">
           <div class="row">
@@ -99,7 +111,6 @@
     </div>
     
   </div>
-
 <section class="panel DMAred">
     <div class="row">
          <div class="column boxBorder">
@@ -111,56 +122,75 @@
           <img id="med_il_instrument"  src="images/elements/med_il_instrument.png" alt="medical device">  
     </div>   
     </div>
-
-
 </section>
 <section class="panel DMAgreen">
     <div class="column ">
       <div class="row boxBorder">
       <h1>WHY CHOOSE US ?</h1>
-      <p>Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.</p>
+      <p>DMA's artwork has appeared in surgical textbooks, heath education websites, conference presentations, patient education films, journals, and iPhone® Apps. Subjects have included head and neck anatomy, facial plastic surgery, breast reconstruction, biomedical devices, pharmaceutical MOA, novel transplant surgery and cancer staging.</p>
       </div>
       <div class="row">
       <img src="images/slider/slide_6.png" alt=" medical illustration sketch">
     </div>       
     </div>
-
-
 </section>
 <section class="panel DMApink">
     <div class="row">
         <div class="column">
              <h1>ABOUT DEVON MEDICAL ART</h1>
-                <p>Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.</p>
+                <p>Products and services include pamphlets, textbooks, journals, posters, websites
+                    service
+                    ANIMATION
+                    2D and 3D for films, presentations, mobile apps
+                    
+                    service
+                    3D MODELING
+                    polygon mesh for graphics, NURBS for manufacture</p>
      </div>
-     <div>
-         <img src="images/slider/slide_8.png" alt="">
-     </div>
-     <div>
-         <div class="column">   
-            <h1>WORK WITH DEVON</h1>
-            <p>Estimates are usually available by the next business day.
-                <a href="contacts.html">Contact Devon</a> to share your project needs.</p>
+     <div id="arrows">
+         <img class="skull" src="images/elements/skull.jpg" alt="skull">
+         <div class="arrowTop">
+            <svg id="arrow_top" data-name="arrow top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 353.54 125.65">
+                <defs>
+                </defs>
+                <title>arrow_top</title>
+                <path class="path" fill="none" stroke="#c82736" stroke-width="4"   d="M352,3.62l-9,3.91"/>
+                <path class="path" fill="none" stroke="#c82736" stroke-width="4"  d="M325.83,15c-94.12,41-196.15,85.54-273.29,90.67"/>
+                <path class="path" fill="none" stroke="#c82736" stroke-width="4"  d="M43.22,106.08c-3.33.08-6.62.08-9.85,0"/>
+                <polygon  fill="#c82736" points="0 105.2 47.53 87.22 35.87 106.14 46.52 125.65 0 105.2"/>
+            </svg>
+            <svg id="arrow_bottom" data-name="arrow top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 353.54 125.65">
+                <defs>
+                </defs>
+                <title>arrow_top</title>
+                <path class="path" fill="none" stroke="#c82736" stroke-width="4"   d="M352,3.62l-9,3.91"/>
+                <path class="path" fill="none" stroke="#c82736" stroke-width="4"  d="M325.83,15c-94.12,41-196.15,85.54-273.29,90.67"/>
+                <path class="path" fill="none" stroke="#c82736" stroke-width="4"  d="M43.22,106.08c-3.33.08-6.62.08-9.85,0"/>
+                <polygon fill="#c82736"  points="0 105.2 47.53 87.22 35.87 106.14 46.52 125.65 0 105.2"/>
+            </svg>
          </div>
-        </div>
-         
+         <!-- <img src="/devonmedicalart.com/images/elements/arrow_top.svg" alt="" class="arrowTop"> -->
 
+     </div>
+
+         
 </section>
 <section class="panel white column">
       <!-- START RECENT WQRKS -->
          <div class="recent_works">
             <div class="container">
-
-   
-
-
+                <div>
+                    <div class="column">   
+                       <h1>WORK WITH DEVON</h1>
+                       <p>Estimates are usually available by the next business day.
+                           <a href="contacts.html">Contact Devon</a> to share your project needs.</p>
+                    </div>
+                   </div>
                 <a href="portfolio_gallery.html" class="button_white">See Porfolio Here</a>
                 <div class="clear"></div>
             </div>
         </div>
         <!-- END RECENT WQRKS -->
-
-
           <!-- START CLIENTS -->
           <div class="clients">
             <h3> Select clients</h3>
@@ -187,21 +217,15 @@
               </div>
     </section>
 </section>
-
-
 <script>
     const updateScrollPercentage = function() { 
 		    const heightOfWindow = window.innerHeight,
 				contentScrolled = window.pageYOffset,
 				bodyHeight = document.body.offsetHeight;
-
-
 				let  total = bodyHeight - heightOfWindow,
 					got = contentScrolled,
                     percent = parseInt((got/heightOfWindow) * 100),
                     lastScrollTop = 0;
-
-
                     var st = window.pageYOffset || document.documentElement.scrollTop; 
                     if (percent >= 30 && percent > lastScrollTop){
                         gsap.fromTo("#med_il_instrument",
@@ -215,12 +239,9 @@
                             { x:10, y: 65, scale : 2});
                     }
                     lastScrollTop = st <= 0 ? 0 : st; 
-                    console.log( "\t",  percent,  " :percent scrolled.  ",  st,   " : from top");
-
         }
         window.addEventListener('scroll', updateScrollPercentage)
         
-
         gsap.utils.toArray(".panel").forEach((panel, i) => {
         ScrollTrigger.create({
             trigger: panel,
@@ -229,67 +250,13 @@
             pinSpacing: false 
         });
         });
-
-
         // ScrollTrigger.create({
         // snap: 1 / 4 // snap whole page to the closest section!
         // });
-
-
     </script>
-
-
-    <div class="row center">
-        <div class="chooseUs">
-            <!-- START ACCORDION -->
-            <h3 class="hide">Why choose us ?</h3>
-            <div id="accordion" class="accordion_v2">
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#content_1">
-                            <span>What is medical illustration ?</span>
-                        </a>
-                    </div>
-                    <div id="content_1" class="accordion-body collapse" style="height: 0px;">
-                        <div class="accordion-inner">
-                            Broadly, it's the application of visual arts to health communications. We create illustrations, animations and 3D models to show the invisible and clarify the complex.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#content_2">
-                            <span> About Devon Medical Art</span>
-                        </a>                                                
-                    </div>
-                    <div id="content_2" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            DMA's artwork has appeared in surgical textbooks, heath education websites, conference presentations, patient education films, journals, and iPhone® Apps. Subjects have included head and neck anatomy, facial plastic surgery, breast reconstruction, biomedical devices, pharmaceutical MOA, novel transplant surgery and cancer staging. 
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#content_3">
-                            <span>Work with Devon</span>
-                        </a>
-                    </div>
-                    <div id="content_3" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            Estimates are usually available by the next business day. <li><a href="contacts.html">Contact Devon</a> to share your project needs. 
-                        </li></div>
-                    </div>
-                </div>
-            </div>
-            <!-- END ACCORDION -->
-        </div>          
-    </div>
-            
 
             
        </section>
-
-
             <script src="js/modernizr.custom.63321.js"></script>
             <script src="js/jquery-ui.min.js" type="text/javascript" ></script>
             <script src="js/placeholder.js" type="text/javascript"></script>
