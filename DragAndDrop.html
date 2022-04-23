@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Here goes description" />
+<meta name="author" content="author name" />
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link href='https://fonts.googleapis.com/css?family=Enriqueta:400,700|Open+Sans:400italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+<script src="./js/jquery-1.10.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<title>Create Porfolio data file</title>
+<style>
+#drop{
+	border:2px dashed #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:25px;
+	text-align:center;
+	font:20pt bold,"Vollkorn";color:#bbb;
+	background: #fff;
+}
+#b64data{
+	width:100%;
+}
+
+.dropContainer{
+	width:80%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	margin:auto;
+	background: #22948f;
+	border: 2 solid red;
+	box-shadow: 2px 2px 10px rgb(216, 213, 169);
+}
+.printOut{
+	width:80%;
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#copyAndDownloadBtns{
+	margin:10px;
+}
+a { text-decoration: none }
+
+.outputType{
+	padding: 19px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.outputType select, #drop, #drop div input{
+	margin-bottom:10px;
+}
+
+ #downloadCode, #copyCode, .chooseBtn{
+	background-color: #FCC069;
+	/* #22948f;  */
+    padding: 20px 40px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #563232;
+	color: #fff;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.chooseBtn:hover{
+	background-color: #8a6328;
+	color: #FCC069;
+	box-shadow: 2px 2px 10px #FCC069;
+}
+.converterForm{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+}
+.dropTitle{
+    background: #16605c;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+}
+.selectFile{
+	background-color: #91c5c3;
+	width: 100%;
+	color: #fff;
+	/* #cc3a3a; */
+	padding:10px;
+	text-align: center;
+}
+input[type="file"] {
+        top: 10px;
+        left: 8px;
+        font-size: 17px;
+        color: #d7d1d1;
+		background-color: rgb(234, 222, 222);
+		border: none;
+		border-radius: 0 5px 5px 0;
+      }
+/* input[type="file"] {
+        position: absolute;
+        z-index: -1;
+        top: 10px;
+        left: 8px;
+        font-size: 17px;
+        color: #b8b8b8;
+      } */
+#out{
+ background-color: #fff;
+ width: 60vw;
+}
+
+.displayResults{
+	margin-top: 20px;
+    color: #a4dedb;
+}
+</style>
+</head>
+<body>
+
+
+	<script>
+        fetch('header.html')
+            .then(function(response) {
+                return response.text()
+            })
+            .then(function(html) {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, "text/html");
+                let navBodyBlob = doc.getElementsByTagName('body').item("").innerHTML
+                document.getElementById("header-template").parentElement.innerHTML = navBodyBlob;
+                $("#header-template").remove()
+            })
+            .catch(function(err) {
+                console.log('Failed to fetch page: ', err);
+            });
+
+        fetch('footer.html')
+            .then(function(response) {
+                return response.text()
+            })
+            .then(function(html) {
+                var parser = new DOMParser();
+                var footerDoc = parser.parseFromString(html, "text/html");
+                let footerBodyBlob = footerDoc.getElementsByTagName('body').item("").innerHTML
+                document.getElementById("footer-template").innerHTML = footerBodyBlob;
+            })
+            .catch(function(err) {
+                console.log('Failed to fetch page: ', err);
+            });
+    </script>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div id="header-template"></div>
+
+</nav>
+
+<div class="pinkBar">
+	<h1>Spreadsheet converter</h1>
+</div>
+<div class="gray p-4" id="jumbotron">
+	<div class="row about">
+
+		<div class="dropContainer">
+			<div class='dropTitle'>
+				<b>Excel to JSON Converter</b>
+			</div>
+
+			<form method="" name="drop" action=""  class="converterForm">
+				<div class='outputType'>
+
+				<div id="drop">Drop a spreadsheet file here to see sheet data</div>
+				<div class="selectFile">
+					<div>... or click here to select a file</div>
+					<div>
+						<input type="file" name="xlfile" id="xlf" class=''/>
+					</div>
+
+		</div>
+			<div>
+
+			</div>
+			</form>
+
+		</div>
+		<div id="copyAndDownloadBtns" style="visibility:hidden">
+			<input type="button" id="downloadCode"  value="Download Code" download/>
+			<input type="button" id="copyCode"  value="Copy Code">
+			<div class="displayResults">Display results <input type="checkbox" name="useworker" id='displayResultsCheck' >
+			</div>
+
+		</div>
+		<div class="printOut">
+			<code>
+			<div id="out" download="txt" style="padding:null"></div>
+			</code>
+			<div id="htmlout"></div>
+			<br />
+		</div>
+	</div>
+</div>
+<div id="footer-template">
+
+</div>
+
+
+
+
+<!-- uncomment the next line here and in xlsxworker.js for encoding support -->
+<script src="./CreatePorfolioData/js/cpexcel.js"></script>
+<script src="./CreatePorfolioData/js/dist/shim.min.js"></script>
+<script src="./CreatePorfolioData/js/xlsx.full.min.js"></script>
+
+<script>
+
+	let sendBlobToServer = async()=>{
+		let sheetBlob = window.localStorage.getItem('sheetBlob');
+		if(sheetBlob != "" || sheetBlob != 'null'){
+			let response = await fetch('/', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json;charset=utf-8'
+			},
+			body: sheetBlob
+		}).then(function(response) {
+				return response.json()
+				})
+		}
+	}
+
+
+
+</script>
+<script>
+
+/*jshint browser:true */
+/* eslint-env browser */
+/*global Uint8Array */
+/*global XLSX */
+/* exported b64it, setfmt */
+/* eslint no-use-before-define:0 */
+
+var global_wb;
+
+var process_wb = (function() {
+	var OUT = document.getElementById('out');
+	var HTMLOUT = document.getElementById('htmlout');
+
+	var get_format = (function() {
+		var radios = document.getElementsByName( "format" );
+		return function() {
+			for(var i = 0; i < radios.length; ++i) if(radios[i].checked || radios.length === 1) return radios[i].value;
+		};
+	})();
+
+	var to_json = function to_json(workbook) {
+		var result = {};
+		workbook.SheetNames.forEach(function(sheetName) {
+			var roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {header:1});
+			if(roa.length) result[sheetName] = roa;
+		});
+		return JSON.stringify(result, 2, 2);
+	};
+
+
+
+	return function process_wb(wb) {
+		global_wb = wb;
+		var output = "";
+		switch(get_format()) {
+			case "json": output = to_json(wb); break;
+			default: output = to_json(wb);
+		}
+		if(document.getElementById('displayResultsCheck').checked == true){
+			if(OUT.innerText === undefined) OUT.textContent = output;
+			else OUT.innerText = output;
+			if(typeof console !== 'undefined') console.log("output", new Date());
+			// OUT.style.padding = "25px";
+			window.localStorage.setItem('sheetBlob', output)
+		}
+
+	};
+})();
+
+var setfmt = window.setfmt = function setfmt() { if(global_wb) process_wb(global_wb); };
+
+var b64it = window.b64it = (function() {
+	var tarea = document.getElementById('b64data');
+	return function b64it() {
+		if(typeof console !== 'undefined') console.log("onload", new Date());
+		var wb = XLSX.read(tarea.value, {type:'base64', WTF:false});
+		process_wb(wb);
+	};
+})();
+
+var do_file = (function(){
+	var use_worker = typeof Worker !== 'undefined';
+	var domwork = document.getElementsByName("useworker")[0];
+	if(!use_worker) domwork.disabled = !(domwork.checked = false);
+
+	var xw = function xw(data, cb) {
+		var worker = new Worker('./CreatePorfolioData/js/xlsxworker.js');
+		worker.onmessage = function(e) {
+			switch(e.data.t) {
+				case 'ready': break;
+				case 'e': console.error(e.data.d); break;
+				case 'xlsx': cb(JSON.parse(e.data.d)); break;
+			}
+		};
+		worker.postMessage({d:data,b:'array'});
+	};
+
+	return function do_file(files) {
+		use_worker = domwork.checked;
+		var f = files[0];
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			if(typeof console !== 'undefined') console.log("onload", new Date(), use_worker);
+			var data = new Uint8Array(e.target.result);
+			if(use_worker) xw(data, process_wb);
+			else process_wb(XLSX.read(data, {type: 'array'}));
+		};
+		reader.readAsArrayBuffer(f);
+	};
+})();
+
+ showButtons= () =>{
+	let grabCopyDwnldBtns = document.getElementById('copyAndDownloadBtns');
+	grabCopyDwnldBtns.style.visibility = "visible";
+}
+
+let grabCopy = document.getElementById('copyCode');
+		grabCopy.addEventListener("click", ()=>{
+		navigator.clipboard.writeText(window.localStorage.getItem('sheetBlob'));
+	});
+
+
+let grabOut = document.getElementById('out');
+let grabDownload = document.getElementById('downloadCode');
+let displayCheck = document.getElementById('displayResultsCheck');
+
+displayCheck.addEventListener('click', ()=>{
+	if(document.getElementById('displayResultsCheck').checked){
+		grabOut.innerHTML = window.localStorage.getItem('sheetBlob')
+	}else{
+		grabOut.innerHTML = '';
+	}
+})
+
+function download(filename, textInput) {
+	var element = document.createElement('a');
+	element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
+	element.setAttribute('download', filename);
+	document.body.appendChild(element);
+	element.click();
+	//document.body.removeChild(element);
+	}
+
+
+	document.getElementById('displayResultsCheck').checked == true
+
+
+grabDownload.addEventListener("click", function () {
+	console.log('clicked')
+	  var text = "localStorage.getItem('sheetBlob')"
+	  var filename = "__outputTest.json";
+	  download(filename, text);
+}, false);
+
+(function() {
+	var drop = document.getElementById('drop');
+	if(!drop.addEventListener) return;
+
+	function handleDrop(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		do_file(e.dataTransfer.files);
+		showButtons()
+		// sendBlobToServer();
+	}
+
+	function handleDragover(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		e.dataTransfer.dropEffect = 'copy';
+	}
+
+	drop.addEventListener('dragenter', handleDragover, false);
+	drop.addEventListener('dragover', handleDragover, false);
+	drop.addEventListener('drop', handleDrop, false);
+})();
+
+(function() {
+	var xlf = document.getElementById('xlf');
+	if(!xlf.addEventListener) return;
+	function handleFile(e) {
+		showButtons();
+		do_file(e.target.files);
+		// sendBlobToServer();
+ }
+	xlf.addEventListener('change', handleFile, false);
+})();
+
+
+	// var _gaq = _gaq || [];
+	// _gaq.push(['_setAccount', 'UA-36810333-1']);
+	// _gaq.push(['_trackPageview']);
+
+	// (function() {
+	// 	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	// 	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	// 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	// })();
+
+
+</script>
+</body>
+</html>
