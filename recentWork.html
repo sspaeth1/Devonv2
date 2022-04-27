@@ -1,0 +1,127 @@
+<!-- START RECENT WQRKS -->
+<div class="recent_works">
+    <div class="container">
+
+        <h3> Recent work </h3>
+
+        <div class="portfolio">
+            <div class="row">
+
+                <script>
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            let recentWorksData = JSON.parse(this.responseText);
+                            localStorage.setItem("recentWorksData", recentWorksData);
+
+                            getThumb = (el) => {
+                                if (el.videoThumb !== "") {
+                                    return el.videoThumb
+                                }
+                                return el.url[0];
+
+                            }
+
+                            getPageId = (el) => el.index();
+
+
+                            recentWorksData.forEach((element, i) => {
+                                $(".row").append(
+                                    `<div class="span3">
+                            <div class='portfolio_item'>
+                                <div class='item_hover'>
+                                    <div class='item_title'>${element.title}</div>
+                                    <ul class='item_tags'>
+                                        <li> </li>
+                                    </ul>
+                                </div>
+                                <div class='item_image'>
+                                    
+                                    <img src="${getThumb(element)}" onclick="location.href='portfolio_item.html'; localStorage.setItem('pageId', ${i+1}); window.location.hash = '1'; " alt="portfolio 1" />
+                                </div>
+                            </div>
+                            
+                                <a  onclick="location.href='portfolio_item.html'; localStorage.setItem('pageId', ${i+1}); window.location.hash = '1'; " alt="portfolio 1"  class="button_color">view</a>
+                            
+                        </div>`
+                                )
+                            });
+
+                        }
+
+                    }
+                    xmlhttp.open("GET", "js/recentWorksData.json", true);
+                    xmlhttp.send();
+                </script>
+
+
+
+
+                <div class="span3">
+                    <div class="portfolio_item">
+                        <div class="item_hover">
+                            <div class="item_title">Penis transplant</div>
+                            <ul class="item_tags">
+                                <!-- <li><a href="#">Surgical illustration and animation</a></li> -->
+                            </ul>
+                            <a href="portfolio_d1.html" class="button_color">view</a>
+                        </div>
+                        <div class="item_image">
+                            <img src="images/portfolio/item_d1.png" alt="portfolio 1" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span3">
+                    <div class="portfolio_item">
+                        <div class="item_hover">
+                            <div class="item_title">Immunotherapy</div>
+                            <ul class="item_tags">
+                                <!-- <li><a href="#">3D animation</a></li> -->
+                            </ul>
+                            <a href="portfolio_d2.html" class="button_color">view</a>
+                        </div>
+                        <div class="item_image">
+                            <img src="images/portfolio/item_d2.png" alt="portfolio 1" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span3">
+                    <div class="portfolio_item">
+                        <div class="item_hover">
+                            <div class="item_title">Video Atlas of Neurosurgery</div>
+                            <ul class="item_tags">
+                                <!-- <li><a href="#">Sugical illustration</a></li> -->
+                            </ul>
+                            <a href="portfolio_d3.html" class="button_color">view</a>
+                        </div>
+                        <div class="item_image">
+                            <img src="images/portfolio/item_d3.png" alt="portfolio 1" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span3">
+                    <div class="portfolio_item">
+                        <div class="item_hover">
+                            <div class="item_title">Transoral thyroidectomy</div>
+                            <ul class="item_tags">
+                                <!-- <li><a href="#">Surgical animation</a></li> -->
+                            </ul>
+                            <a href="portfolio_d4.html" class="button_color">view</a>
+                        </div>
+                        <div class="item_image">
+                            <img src="images/portfolio/item_d4.png" alt="portfolio 1" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <a href="portfolio_gallery.html" class="button_white">see all</a>
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- END RECENT WQRKS -->
