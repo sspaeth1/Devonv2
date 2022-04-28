@@ -21,9 +21,7 @@
     <!--[if IE 8]>
         <link rel="stylesheet" href="css/ie8.css" />
         <![endif]-->
-    <!-- <script id="GSAP" type="text/javascript" src="js/gsap.min.js"></script> -->
-    <!-- <script id="scrollScript" src="js/ScrollTrigger.min.js"></script> -->
-    <script>
+     <script>
         if (window.innerWidth < 600) {
             console.log('small screen');
             document.getElementById("scrollScript");
@@ -50,10 +48,17 @@
         <div id="header-template"></div>
 
     </nav>
+
+
+        <div  >
+          <img class='tornPaper' src="./images/tornPaper.png" alt="">
+        </div>
+
+
     <div class="description panel pink">
         <div>
 
-            <div class="slider">
+    <div class="slider">
                 <div class="rs_mainslider">
                     <ul class="rs_mainslider_items">
                         <li class="rs_mainslider_items_active">
@@ -88,34 +93,32 @@
                 <div class="row">
 
                 </div>
-                <h1>WHY CHOOSE US ?</h1>
+                <h1>Media for Medicine</h1>
                 <p></p>Scroll down
                 <div class="arrow"></div>
             </div>
         </div>
 
     </div>
-    <section class="panel DMAred">
+
+    <section class="panel DMAred DMArow">
         <div class="row">
             <div class="column boxBorder">
-                <h1>WHAT IS MEDICAL ILLUSTRATION ?</h1>
-                <p class="whiteText">It's the application of visual arts to health communications. Medical Illustrators create artwork, infographics and animations to show the invisible and clarify the complex.
+                <h1>Medical Illustration</h1>
+                <p class="whiteText">Custom artwork, informed by science and client expertise for manuscripts, slide decks and websites
                 </p>
             </div>
             <div class="illustration">
-                <img id="med_il" src="images/elements/med_il.jpg" alt="Medical illustration">
-                <img id="med_il_instrument" src="images/elements/med_il_instrument.png" alt="medical device">
+                <img id="med_il" src="images/elements/med_il.jpg" alt="medical device">
             </div>
         </div>
     </section>
 
-    <section class="panel DMAgreen">
+    <section class="panel DMAgreen DMArow">
         <div class="row">
             <div class="column boxBorder">
-                <h1>WHY CHOOSE US ?</h1>
-                <p>DMA's artwork has appeared in peer-reviewed journals, surgical textbooks, and the websites of renowned institutions like Johns Hopkins Medicine and The National Cancer Institute. We have a depth of experience in cardiology, head and neck
-                    anatomy, facial plastic surgery, breast reconstruction, biomedical devices, pharmaceutical MOA, novel transplant surgery and cancer treatment.
-                </p>
+                <h1>Animation</h1>
+                <p>Original animations created using the latest 2D and 3D technology for MOD/MOA, cardiology, head and neck anatomy, plastic surgery, breast reconstruction, biomedical devices, transplant surgery, cancer treatment and patient education </p>
             </div>
             <div class="illustration">
                 <img src="images/slider/slide_6.png" alt=" medical illustration sketch">
@@ -123,11 +126,11 @@
         </div>
     </section>
 
-    <section class="panel DMApink">
+    <section class="panel DMApink DMArow">
         <div class="row">
             <div class="column">
-                <h1>ABOUT DEVON MEDICAL ART</h1>
-                <p>Products and services include pamphlets, textbooks, journals, posters, websites service ANIMATION 2D and 3D for films, presentations, mobile apps service 3D MODELING polygon mesh for graphics, NURBS for manufacture</p>
+                <h1>3D Modeling</h1>
+                <p>Organic anatomical models for surgery, crystal structure-based protein models and small molecules</p>
             </div>
             <div id="arrows">
                 <img class="skull" src="images/elements/skull.jpg" alt="skull">
@@ -157,6 +160,13 @@
 
 
     </section>
+
+    <style>
+        .contactLink{
+            padding:0;
+            margin:0;
+        }
+    </style>
     <section class="panel white column">
         <!-- START RECENT WQRKS -->
         <div class="recent_works">
@@ -164,53 +174,117 @@
                 <div>
                     <div class="column">
                         <h1>WORK WITH DEVON</h1>
-                        <p>Estimates are usually available by the next business day. Contact <a href="mailto:devonmedicalart@gmail.com">Devon</a> to share your project needs.</p>
+                        <p>Estimates are usually available by the next business day. Contact Devon to share your project needs.</p>
 
                     </div>
                 </div>
-                <a href="portfolio_gallery.html" class="button_white">See Porfolio Here</a>
+                <div>
+                     <a href="portfolio_gallery.html" class="button_white">See Porfolio Here</a>
+                </div>
                 <div class="clear"></div>
             </div>
         </div>
         <!-- END RECENT WQRKS -->
+
+
+
+</section>
+
+
+            <!-- START Testimonials -->
+            <div class="panel DMApink DMArow">
+                <ul class="testimonials">
+                    <li class="testimonial-item ">
+                        <p>“Devon of Devon Medical Art did an amazing job on the medical illustrations for
+                            our group this year. Her talent has taken our key publications to the next level
+                            and added a real sense of top level quality. Frank Netter has nothing on her!”
+                            <br>
+                        <div class="testimonial_info">-Matthew T. Moyer MD, MS, Division of GI-Hepatology</div>
+                        </p>
+                    </li>
+
+                    <li class="testimonial-item">
+                        <p>“Devon is a scientifically trained, artistically skilled medical illustrator. She is
+                            facile with new subject material, speaks and understands science fluently and is
+                            able to translate it into meaningful, instructive illustrations. On top of all of that,
+                            she is easy to work with, takes feedback well, doesn’t try to “outsmart” you and
+                            delivers a high quality product on time and in budget. She’s one of a kind!”
+                            <br>
+                        <div class="testimonial_info">-Doug Stroup and Christina Corso, WE Communications</div>
+                    </p>
+                    </li>
+                    <li class="testimonial-item">
+                        <p>“The images are astoundingly good.”</p>
+                        <div class="testimonial_info">-Dr. Andrew Healey, Chief Medical Officer for Donation with Trillium Gift of Life
+                            Network and associate authors</div>
+                    </li>
+                    <li class="testimonial-item ">
+                        <p>“Working with Devon is an absolute pleasure. Not only is she talented but she&#39;s
+                            extremely knowledgeable and highly committed to scientific accuracy in her
+                            work. Her drawings are very intricate and carefully planned. Her art illuminates
+                            complex processes in a stunning way, with multiple layers of concurrent action.
+                            She really understood our needs and the perspective of our audience. The look
+                            and feel of her animation blends really well with our work. We were absolutely
+                            dazzled by the finished product and look forward to tapping into her talents
+                            again soon.”
+                            <br>
+                        <div class="testimonial_info">-Annie Norman, Leigh Devine, Editorial Directors, Medscape, Inc.</div>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        <!-- END TESTIMONIALS -->
+
+
         <!-- START CLIENTS -->
-        <div class="clients">
-            <h3> Select clients</h3>
-            <div>
-                <ul class="selectClients">
-                    <li class="span2">
-                        <a href="#"><img src="images/clients/clients_1.png" alt="clients" /></a>
-                    </li>
-                    <li class="span2">
-                        <a href="#"><img src="images/clients/clients_2.png" alt="clients" /></a>
-                    </li>
-                    <li class="span2">
-                        <a href="#"><img src="images/clients/clients_3.png" alt="clients" /></a>
-                    </li>
-                    <li class="span2">
-                        <a href="#"><img src="images/clients/clients_4.png" alt="clients" /></a>
-                    </li>
-                    <li class="span2">
-                        <a href="#"><img src="images/clients/clients_5.png" alt="clients" /></a>
-                    </li>
-                    <li class="span2">
-                        <a href="#"><img src="images/clients/clients_6.png" alt="clients" /></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- END CLIENTS -->
-        <section class="footer">
-            <div class="column">
-                <div class="widget-title">contact info</div>
-                <ul class="contact_widget">
-                    <li class="phone">001 717 534 1781</li>
-                    <li class="mail"><a href="mailto:devonmedicalart@gmail.com">devonmedicalart@gmail.com</a></li>
-                    <li class="location">Hershey PA USA</li>
-                </ul>
-            </div>
-        </section>
-    </section>
+            <section class="panel">
+
+                <div class="clients">
+                    <h3> Select clients</h3>
+                    <div>
+                        <ul class="selectClients">
+                            <li class="span2">
+                                <a href="#"><img src="images/clients/clients_1.png" alt="clients" /></a>
+                            </li>
+                            <li class="span2">
+                                <a href="#"><img src="images/clients/clients_2.png" alt="clients" /></a>
+                            </li>
+                            <li class="span2">
+                                <a href="#"><img src="images/clients/clients_3.png" alt="clients" /></a>
+                            </li>
+                            <li class="span2">
+                                <a href="#"><img src="images/clients/clients_4.png" alt="clients" /></a>
+                            </li>
+                            <li class="span2">
+                                <a href="#"><img src="images/clients/clients_5.png" alt="clients" /></a>
+                            </li>
+                            <li class="span2">
+                                <a href="#"><img src="images/clients/clients_6.png" alt="clients" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <section class="footer">
+
+                    <div class="column">
+                        <div class="widget-title">contact info</div>
+                        <ul class="contact_widget">
+                            <li class="phone">001 717 534 1781</li>
+                            <li class="mail"><a href="mailto:devonmedicalart@gmail.com">devonmedicalart@gmail.com</a></li>
+                            <li class="location">Hershey PA USA</li>
+                        </ul>
+                    </div>
+            </section>
+            </section>
+
+                <!-- END CLIENTS -->
+
+
     <script>
         const updateScrollPercentage = function() {
             const heightOfWindow = window.innerHeight,
@@ -223,30 +297,7 @@
                 done = false;
             var st = window.pageYOffset || document.documentElement.scrollTop;
             if (done != true) {
-                if (percent >= 30 && percent > lastScrollTop) {
-                    gsap.fromTo("#med_il_instrument", {
-                        x: -50,
-                        y: 30,
-                        scale: 2.3
-                    }, {
-                        x: 10,
-                        y: 65,
-                        scale: 2
-                    })
-                    done = true;
-                    console.log(done)
-                } else if (percent <= 30) {
-                    gsap.fromTo("#med_il_instrument", {
-                        x: -50,
-                        y: 30,
-                        scale: 2.3
-                    }, {
-                        x: 10,
-                        y: 65,
-                        scale: 2
-                    });
-                    done = true;
-                }
+
                 lastScrollTop = st <= 0 ? 0 : st;
             }
 
@@ -257,29 +308,15 @@
             ScrollTrigger.create({
                 trigger: panel,
                 start: "top top",
+                end: "+=1000",
                 pin: true,
                 pinSpacing: false
             });
         });
         // ScrollTrigger.create({
-        // snap: 1 / 4 // snap whole page to the closest section!
+        // snap: 1 / 4 // snap whole page to the closest section
         // });
     </script>
-
-    <!-- <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        let tl = gsap.timeline();
-        tl.to("#med_il_instrument", {
-            ScrollTrigger: {
-                trigger: "#med_il_instrument",
-                toggleActions: "play pause resume restart"
-            },
-            x: -50,
-            y: 30,
-            scale: 2.3
-        });
-    </script> -->
 
     </section>
     <script src="js/modernizr.custom.63321.js"></script>
