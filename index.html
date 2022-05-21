@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>DevonMedicalArt</title>
-    <meta name="description" content="Here goes description" />
-    <meta name="author" content="author name" />
+    <title>Devon Medical Art</title>
+    <meta name="description" content="Medical Illustration" />
+    <meta name="author" content="Devon Medical Art" />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link href='https://fonts.googleapis.com/css?family=Enriqueta:400,700|Open+Sans:400italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
@@ -21,16 +21,7 @@
     <!--[if IE 8]>
         <link rel="stylesheet" href="css/ie8.css" />
         <![endif]-->
-     <script>
-        if (window.innerWidth < 600) {
-            console.log('small screen');
-            document.getElementById("scrollScript");
-            let script = document.createElement('script');
-            script.id = "scrollScript";
-            script.src = "js/ScrollTrigger.min.js";
-            document.getElementById('GSAP').appendChild(script);
-        }
-    </script>
+
 
 </head>
 
@@ -44,12 +35,20 @@
         });
     </script>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div id="header-template"></div>
-
-    </nav>
-
-
+ </nav>
+ <div id="GSAP"></div>
+ <script>
+    if (window.innerWidth < 600) {
+        console.log('small screen');
+        document.getElementById("scrollScript");
+        let script = document.createElement('script');
+        script.id = "scrollScript";
+        script.src = "js/ScrollTrigger.min.js";
+        document.getElementById('GSAP').appendChild(script);
+    }
+</script>
         <div  >
           <img class='tornPaper' src="./images/tornPaper.png" alt="">
         </div>
@@ -108,32 +107,8 @@
                 <p class="whiteText">Custom artwork, informed by science and client expertise for manuscripts, slide decks and websites
                 </p>
             </div>
-            <div class="illustration">
-                <img id="med_il" src="images/elements/med_il.jpg" alt="medical device">
-            </div>
-        </div>
-    </section>
-
-    <section class="panel DMAgreen DMArow">
-        <div class="row">
-            <div class="column boxBorder">
-                <h1>Animation</h1>
-                <p>Original animations created using the latest 2D and 3D technology for MOD/MOA, cardiology, head and neck anatomy, plastic surgery, breast reconstruction, biomedical devices, transplant surgery, cancer treatment and patient education </p>
-            </div>
-            <div class="illustration">
-                <img src="images/slider/slide_6.png" alt=" medical illustration sketch">
-            </div>
-        </div>
-    </section>
-
-    <section class="panel DMApink DMArow">
-        <div class="row">
-            <div class="column">
-                <h1>3D Modeling</h1>
-                <p>Organic anatomical models for surgery, crystal structure-based protein models and small molecules</p>
-            </div>
             <div id="arrows">
-                <img class="skull" src="images/elements/skull.jpg" alt="skull">
+                <img class="skull" src="images/elements/Home page Illustration01.png" alt="skull">
                 <div class="arrowTop">
                     <svg id="arrow_top" data-name="arrow top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 353.54 125.65">
                 <defs>
@@ -158,8 +133,38 @@
 
             </div>
 
-
     </section>
+
+    <section class="panel DMApink DMArow">
+        <div class="row">
+            <div class="column boxBorder">
+                <h1>3D Modeling</h1>
+                <p>Organic anatomical models for surgery, crystal structure-based protein models and small molecules</p>
+            </div>
+
+            <div class="illustration">
+                <img id="med_il" src="images/elements/virus.png" alt="Medical illustration">
+                <img id="med_il_instrument" src="images/elements/antibody.png" alt="medical device" style="transform: translate(10px, 65px) scale(2, 2);">
+            </div>
+            <button class="playReplay">Play</button>
+
+            </div>
+    </section>
+
+
+    <section class="panel DMAgreen DMArow">
+        <div class="row">
+            <div class="column boxBorder">
+                <h1>Animation</h1>
+                <p>Original animations created using the latest 2D and 3D technology for MOD/MOA, cardiology, head and neck anatomy, plastic surgery, breast reconstruction, biomedical devices, transplant surgery, cancer treatment and patient education </p>
+            </div>
+            <div class="illustration">
+                <img src="images/elements/Home page Animation01.png" alt=" medical illustration sketch">
+            </div>
+        </div>
+    </section>
+
+
 
     <style>
         .contactLink{
@@ -185,9 +190,6 @@
             </div>
         </div>
         <!-- END RECENT WQRKS -->
-
-
-
 </section>
 
 
@@ -298,10 +300,27 @@
             var st = window.pageYOffset || document.documentElement.scrollTop;
             if (done != true) {
 
-                lastScrollTop = st <= 0 ? 0 : st;
+                // gsap.fromTo("#med_il_instrument", {
+                //     x: -50,
+                //     y: 30,
+                //     scale: 4,
+                //     opacity:0
+                // }, {
+                //     x: 50,
+                //     y: 65,
+                //     scale: 2,
+                //     opacity:1,
+                //     ease: Power4.easeOut
+                // });
+                // done = true;
             }
+            lastScrollTop = st <= 0 ? 0 : st;
+
 
         }
+
+
+
         window.addEventListener('scroll', updateScrollPercentage)
 
         gsap.utils.toArray(".panel").forEach((panel, i) => {
@@ -316,6 +335,27 @@
         // ScrollTrigger.create({
         // snap: 1 / 4 // snap whole page to the closest section
         // });
+    </script>
+
+    <script>
+        const grabPlayReplay = document.querySelector('.playReplay')
+        grabPlayReplay.addEventListener('click', ()=>{
+            gsap.fromTo("#med_il_instrument", {
+                    x: -50,
+                    y: 30,
+                    scale: 4,
+                    opacity:0
+                }, {
+                    x: 50,
+                    y: 65,
+                    scale: 2,
+                    opacity:1,
+                    duration:2,
+                    ease: Power4.easeOut
+                });
+        })
+
+
     </script>
 
     </section>
