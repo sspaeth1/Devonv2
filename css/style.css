@@ -232,10 +232,12 @@ img.wp-smiley,
 }
 #media {
   text-align: center;
+  box-shadow: 2px 2px 19px #dfd2d2;
+  padding: 38px;
 }
 #media > img {
   max-width: 50vw;
-  box-shadow: 5px 5px 10px rgb(196, 196, 196);
+  /* box-shadow: 5px 5px 10px rgb(196, 196, 196); */
 }
 #media > H1 {
   font-size: 2em !important;
@@ -258,6 +260,23 @@ img.wp-smiley,
   color: red;
 }
 /* Index page and GSAP specific */
+button.playReplay {
+  background: #c82736;
+  color: #feecda;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 3px #22948f;
+  display: inline-block;
+}
+
+button.playReplay:hover {
+  opacity: 0.5;
+  box-shadow: 0 0 0 #22948f;
+  transform: translate(3px, 3px);
+}
+button.playReplay:focus {
+  border: none;
+  outline: none;
+}
 
 .column {
   display: flex;
@@ -1773,11 +1792,11 @@ li.nav-item:hover {
 /* ======================== SINGLE PORTFOLIO ======================== */
 
 .single_portfolio {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .single_portfolio .project_details {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 .single_portfolio .project_details li {
