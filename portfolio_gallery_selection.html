@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>DevonMedicalArt</title>
-    <meta name="description" content="Here goes description" />
-    <meta name="author" content="author name" />
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description"content="Here goes description"/>
+    <meta name="author"content="author name"/>
+    <link rel="shortcut icon"href="images/favicon.ico"type="image/x-icon"/>
+    <meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <link href='https://fonts.googleapis.com/css?family=Enriqueta:400,700|Open+Sans:400italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"crossorigin="anonymous">
+    <link rel="stylesheet"href="css/style.css"/>
     <script src="js/jquery-1.10.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"crossorigin="anonymous"></script>
     <!--[if IE 8]>
-        <link rel="stylesheet" href="css/ie8.css" />
+        <link rel="stylesheet"href="css/ie8.css"/>
         <![endif]-->
 </head>
 
@@ -32,15 +32,15 @@
         <div id="header-template"></div>
     </nav>
     <div  >
-        <img class='tornPaper' src="./images/tornPaper.png" alt="">
+        <img class='tornPaper' src="./images/tornPaper.png"alt="">
       </div>
 
-      <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-      viewBox="0 0 86.6 40.15" style="enable-background:new 0 0 86.6 40.15;" xml:space="preserve">
+      <!-- <svg version="1.1"id="Layer_1"xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink"x="0px"y="0px"
+      viewBox="0 0 86.6 40.15"style="enable-background:new 0 0 86.6 40.15;"xml:space="preserve">
   <style type="text/css">
       .st0{fill:#ff00ff;}
   </style>
-  <polygon class="st0" points="43.3,40.15 86.6,0 0,0 "/>
+  <polygon class="st0"points="43.3,40.15 86.6,0 0,0 "/>
   </svg> -->
 
 
@@ -112,100 +112,96 @@
   </style>
 
       <div class="mediaSelectionArea">
-        <div class="styleSelect" >
-            <label for="category" ></labels>
-            <select name="category" id="category">
+        <div class="styleSelect">
+            <label for="category"></labels>
+            <select name="category"id="category">
 
-                <option value="Select a category" >Select a category</option>
+                <option value="Select a category">Select a category</option>
                 <option value="3D modeling">3D modeling</option>
                 <option value="Anatomical illustration">Anatomical illustration</option>
                 <option value="Animation">Animation</option>
                 <option value="Patient education">Patient education</option>
                 <option value="Pharmaceutical and biomedical research">Pharmaceutical and biomedical research</option>
                 <option value="Surgical illustration">Surgical illustration</option>
-                <option value="View all">View all</option>
+                <!-- <option value="View all">View all</option> -->
             </select>
         </div>
       </div>
     <script>
-      //// grab selection option wont work since styling overwrites the action
-      // let grabCategorySelection = document.getElementById('category').firstElementChild;
-      // console.log(grabCategorySelection)
-      // grabCategorySelection.addEventListener('change', (el)=>{
-      //       console.log(el.target.value);
-      //   })
-
         let itemArr = [],
          arr_3D_modeling = [],
           arr_Anatomical_illustration = [],
            arr_Animation = [],
             arr_Patient_education = [],
              arr_Pharmaceutical_and_biomedical_research = [],
-              arr_Surgical_illustration = [];
-        // let
-        //   pageTitle   = data.Portfolio[i][0];
-        //   Description  = data.Portfolio[i][1];
-        //   Type           = data.Portfolio[i][2];
-        //   video or image  = data.Portfolio[i][3];,
-        //   video1Thumb     = data.Portfolio[i][4];
-        //    video1Url ,
-        //    video2Thumb ,
-        //    video2Url ,
-        //    video3Thumb ,
-        //    video3Url ,
-        //    image1url ,
-        //    image1AltTag ,
-        //    image1Description ,
-        //    image2url ,
-        //    image2AltTag ,
-        //    image2Description ,
-        //    image3url ,
-        //    image3AltTag ,
-        //    image3Description ,
-        //    image4url ,
-        //    image4AltTag ,
-        //    image4Description ,
-        //    image5url ,
-        //    image5AltTag ,
-        //    image5Description ,
-        //    image6url ,
-        //    image6AltTag ,
-        //    image6Description ,
-        //    image7url ,
-        //    image7AltTag ,
-        //    image7Description ,
-        //    image8url ,
-        //    image8AltTag ,
-        //    image8Description ,
-        //    image9url ,
-        //    image9AltTag ,
-        //    image9Description ,
-        //    image10url ,
-        //    image10AltTag ,
-        //    image10Description
+              arr_Surgical_illustration = [],
+               arr_allItems = []
 
-
-        let LoadImageEntries = (data) =>{
-            for (let i = 1; i < data.Portfolio.length; i++){
-                let isVideoEntry = data.Portfolio[i][1];
-                console.log(data.Portfolio[i],  " ITEM")
-                if(data.Portfolio[i].length>0  ){
-                    if(isVideoEntry){
-                        $(".row").append(
-
-                    )
-                    return
-                    }
-
-                }
-           }
-        }
+              // 0: "pageTitle"
+              // 1: "thumbnail"
+              // 2: "description"
+              // 3: "video1Title"
+              // 4: "video1Thumb"
+              // 5: "video1Url"
+              // 6: "video2Title"
+              // 7: "video2Thumb"
+              // 8: "video2Url"
+              // 9: "video3Title"
+              // 10: "video3Thumb"
+              // 11: "video3Url"
+              // 12: "video4Title"
+              // 13: "video4Thumb"
+              // 14: "video4Url"
+              // 15: "video5Title"
+              // 16: "video5Thumb"
+              // 17: "video5Url"
+              // 18: "video6Title"
+              // 19: "Video6Thumb"
+              // 20: "video6Url"
+              // 21: "video7Title"
+              // 22: "Video7Thumb"
+              // 23: "video7Url"
+              // 24: "video8Title"
+              // 25: "Video8Thumb"
+              // 26: "video8Url"
+              // 27: "video9Title"
+              // 28: "Video9Thumb"
+              // 29: "video9Url"
+              // 30: "image1url"
+              // 31: "image1AltTag"
+              // 32: "image1type"
+              // 33: "image2url"
+              // 34: "image2AltTag"
+              // 35: "image2type"
+              // 36: "image3url"
+              // 37: "image3AltTag"
+              // 38: "image3type"
+              // 39: "image4url"
+              // 40: "image4AltTag"
+              // 41: "image4type"
+              // 42: "image5url"
+              // 43: "image5AltTag"
+              // 44: "image5type"
+              // 45: "image6url"
+              // 46: "image6AltTag"
+              // 47: "image6type"
+              // 48: "image7url"
+              // 49: "image7AltTag"
+              // 50: "image7type"
+              // 51: "image8url"
+              // 52: "image8AltTag"
+              // 53: "image8type"
+              // 54: "image9url"
+              // 55: "image9AltTag"
+              // 56: "image9type"
+              // 57: "image10url"
+              // 58: "image10AltTag"
+              // 59: "image10type"
 
 
         let  isImageEntry = (data, i)=>{
             if (data.Portfolio[i][3] !== "video"){
                 // console.log("Image: ", i,  data.Portfolio[i][0]);
-
                  $(".row").append(
                         `<div class='span4 design'>
                                 <div class='portfolio_item'>
@@ -213,10 +209,10 @@
                                         <div class='item_title'>${data.Portfolio[i][0]}</div>
                                     </div>
                                     <div class='item_image'>
-                                        <img src="${data.Portfolio[i][4]}" onclick="location.href='portfolio_${i}.html'; localStorage.setItem('pageId', indexOf(itemArr)+1); window.location.hash = '1'; "alt="portofolio ${1}" loading="lazy"/>
+                                        <img src="${data.Portfolio[i][1]}"onclick="location.href='portfolio_${i}.html'; localStorage.setItem('pageId', indexOf(itemArr)+1); window.location.hash = '1'; "alt="portofolio ${1}"loading="lazy"/>
                                    </div>
                                 </div>
-                                    <a href="portfolio_${i}.html" class="button_color">view</a>
+                                    <a href="portfolio_${i}.html"class="button_color">view</a>
 
                           </div>`
                     )
@@ -233,25 +229,24 @@
                                         <div class='item_title'>${data.Portfolio[i][0]}</div>
                                     </div>
                                     <div class='item_image'>
-                                        <img src="${data.Portfolio[i][3]}" onclick="location.href='portfolio_${i}.html'; localStorage.setItem('pageId', indexOf(itemArr)+1); window.location.hash = '1'; " alt="portofolio ${1}" loading="lazy"/>
+                                        <img src="${data.Portfolio[i][1]}"onclick="location.href='portfolio_${i}.html'; localStorage.setItem('pageId', indexOf(itemArr)+1); window.location.hash = '1'; "alt="portofolio ${1}"loading="lazy"/>
                                    </div>
                                 </div>
-                                    <a href="portfolio_${i}.html" class="button_color">view</a>
+                                    <a href="portfolio_${i}.html"class="button_color">view</a>
                           </div>`
                )
             }
         }
 
-        fetch('./spreadsheet/portfolioDataSheets_v2.json')
+        fetch('./spreadsheet/portfolioDataSheets_v3.json')
         .then(res=> res.json())
         .then(data=>{
             data.Portfolio.forEach((item)=> {
                 itemArr.push(item)
             })
-            console.log( sessionStorage.getItem( 'selection'))
-
+            // console.log( sessionStorage.getItem( 'selection'))
             for (let i = 2; i < data.Portfolio.length; i++){
-             switch(data.Portfolio[i][2]){
+             switch(data.Portfolio[i][3]){
               case "3D modeling":
                 arr_3D_modeling.push(data.Portfolio[i]);
                 break;
@@ -265,7 +260,7 @@
                 arr_Patient_education.push(data.Portfolio[i])
                 break;
               case "Pharmaceutical and biomedical research":
-                arr_Pharmaceutical_and_biomedical_research.push(data.Portfolio[i][2])
+                arr_Pharmaceutical_and_biomedical_research.push(data.Portfolio[i])
               break;
               case "Surgical illustration":
                 arr_Surgical_illustration.push(data.Portfolio[i])
@@ -276,16 +271,17 @@
                 if(sessionStorage.getItem('selection') !== 'videos' && sessionStorage.getItem('selection') !== 'images'){
                     isVideoEntry(data, i);
                     isImageEntry(data, i);
-                    // LoadImageEntries(data, i);
                 }else if(  sessionStorage.getItem('selection') == 'videos'){
                     isVideoEntry(data, i);
                 }else if(  sessionStorage.getItem('selection') == 'images'){
                     isImageEntry(data, i);
                 }
             }
+            arr_allItems = itemArr;
         })
         .catch(err =>{ console.log(err)}
         )
+        console.log(arr_allItems)
     </script>
 
 
@@ -294,7 +290,7 @@
         <div class="site_content">
             <div class="content">
                 <div class="portfolio">
-                    <div class="row" id="displayedPortfolioItems">
+                    <div class="row"id="displayedPortfolioItems">
                     </div>
                 </div>
             </div>
@@ -304,9 +300,9 @@
         <div id="footer-template"></div>
 
         <script src="js/modernizr.custom.63321.js"></script>
-        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-        <script src="js/placeholder.js" type="text/javascript"></script>
-        <script src="js/options.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.min.js"type="text/javascript"></script>
+        <script src="js/placeholder.js"type="text/javascript"></script>
+        <script src="js/options.js"type="text/javascript"></script>
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </body>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -348,16 +344,14 @@
               case "arr_Surgical_illustration":
                    updatedSessionStorageType = arr_Surgical_illustration
                 break;
-              case "View All":
-                 itemArr
+              case "View all":
+                updatedSessionStorageType = itemArr
               default:
                 console.log('nothing here')
              }
-
             for( let i = 0; i < updatedSessionStorageType.length; i++){
-                // console.log(updatedSessionStorageType[i])
-                if (updatedSessionStorageType[i][3] !== "video"){
-                // console.log("Image: ", i,  data.Portfolio[i][0]);
+                console.log(updatedSessionStorageType[i])
+                if (updatedSessionStorageType[i][3] !== "Animation"){
 
                  $("#displayedPortfolioItems").append(
                         `<div class='span4 design'>
@@ -366,15 +360,15 @@
                                         <div class='item_title'>${updatedSessionStorageType[i][0]}</div>
                                     </div>
                                     <div class='item_image'>
-                                        <img src="${updatedSessionStorageType[i][4]}" onclick="location.href='portfolio_${i}.html'; localStorage.setItem('pageId', indexOf(itemArr)+1); window.location.hash = '1'; "alt="portofolio ${1}" loading="lazy"/>
+                                        <img src="${updatedSessionStorageType[i][1]}"onclick="location.href='portfolio_${i}.html'; localStorage.setItem('pageId', indexOf(itemArr)+1); window.location.hash = '1'; "alt="portofolio ${1}"loading="lazy"/>
                                    </div>
                                 </div>
-                                    <a href="portfolio_${i}.html" class="button_color">view</a>
+                                    <a href="portfolio_${i}.html"class="button_color">view</a>
 
                           </div>`
                     )
                 }
-                if (updatedSessionStorageType[i][3] == "video"){
+                if (updatedSessionStorageType[i][3] == "Animation"){
                   $("#displayedPortfolioItems").append(
                   `<div class='span4 design'>
                                       <div class='portfolio_item'>
@@ -382,10 +376,10 @@
                                               <div class='item_title'>${updatedSessionStorageType[i][0]}</div>
                                           </div>
                                           <div class='item_image'>
-                                              <img src="${updatedSessionStorageType[i][3]}" onclick="location.href='portfolio_${i}.html'; localStorage.setItem('pageId', indexOf(itemArr)+1); window.location.hash = '1'; " alt="portofolio ${1}" loading="lazy"/>
+                                              <img src="${updatedSessionStorageType[i][1]}"onclick="location.href='portfolio_${i}.html'; localStorage.setItem('pageId', indexOf(itemArr)+1); window.location.hash = '1'; "alt="portofolio ${1}"loading="lazy"/>
                                         </div>
                                       </div>
-                                          <a href="portfolio_${i}.html" class="button_color">view</a>
+                                          <a href="portfolio_${i}.html"class="button_color">view</a>
                                 </div>`
                     )
                   }
